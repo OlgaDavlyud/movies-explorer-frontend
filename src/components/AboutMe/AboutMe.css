@@ -1,5 +1,5 @@
 .about-me {
-    padding: 110px 70px 125px;
+    padding: 110px 70px 100px;
     background: #202020;
 }
 
@@ -16,10 +16,19 @@
 .section__container {
     border-top: 1px solid #DADADA;
     margin-top: 23px;
-    display: grid;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 66px;
+}
+
+.about-me__info {
+    max-width: 600px;
+    max-height: 327px;
 }
 
 .about-me__title {
+    margin-top: 0;
+    margin-bottom: 0;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -30,6 +39,8 @@
 }
 
 .about-me__subtitle {
+    margin-top: 18px;
+    margin-bottom: 0;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -40,6 +51,8 @@
 }
 
 .about-me__description {
+    margin-top: 26px;
+    margin-bottom: 79px;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
