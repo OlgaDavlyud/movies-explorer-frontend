@@ -11,8 +11,8 @@ function Footer() {
             <div className="footer__container">
                 <p className="footer__text">© {year} </p>
                 <nav className="footer__links">
-                    <a className="footer__text footer__link" href="https://practicum.yandex.ru/" target="blank">Яндекс.Практикум</a>
-                    <a className="footer__text footer__link" href="https://github.com/OlgaDavlyud" target="blank">Github</a>
+                    <a className="footer__text footer__link" href="https://practicum.yandex.ru/" target="blank" rel="noopener noreferrer">Яндекс.Практикум</a>
+                    <a className="footer__text footer__link" href="https://github.com/OlgaDavlyud" target="blank" rel="noopener noreferrer">Github</a>
                 </nav>
             </div>
         </footer>

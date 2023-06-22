@@ -12,7 +12,7 @@ function Header() {
                 alt="Логотип проекта"
             />
             <nav className="header__navigation">
-                <a className="header__auth-link" href="/" target="blank">Регистрация</a>
+                <a className="header__auth-link" href="/" target="blank" rel="noopener noreferrer">Регистрация</a>
                 <button className="header__login-btn">Войти</button>
             </nav>
             {/* <Routes>
