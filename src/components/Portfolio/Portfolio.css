@@ -46,4 +46,10 @@
 .portfolio__link-img {
     width: 29px;
     height: 60px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.portfolio__link-img:hover {
+    opacity: 0.7;
 }

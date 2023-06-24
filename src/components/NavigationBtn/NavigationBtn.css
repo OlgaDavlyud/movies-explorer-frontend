@@ -1,0 +1,40 @@
+.navigation__profile-btn {
+    width: 100px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-radius: 40px;
+    border: #202020;
+    background: #202020;
+    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.profile-btn__text {
+    margin: 0 8px 0 11px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 12px;
+    text-align: center;
+    color: #FFF;
+}
+
+.profile-btn__img-background {
+    width: 26px;
+    height: 26px;
+    margin-right: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: #313131;
+}
+
+.profile-btn__img {
+    width: 10.383px;
+    height: 10.669px;
+}

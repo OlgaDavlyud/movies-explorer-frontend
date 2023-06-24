@@ -1,0 +1,119 @@
+.section-with-form {
+    max-width: 396px;;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.section__title {
+    padding: 40px 0;
+    margin: 0;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    color: #FFF;
+}
+
+.section__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input__container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 65px;
+}
+
+.input__title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    color: #8B8B8B;
+}
+
+.section__input {
+    width: 390px;
+    padding: 0 0 10px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFF;
+    background: #202020;
+    border-bottom: 1px solid #424242;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+}
+
+.section__error-visible {
+    margin-top: 6px;
+    margin-bottom: 24px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    color: #EE3465;
+}
+
+.section__error-visible:last-child {
+    margin-bottom: 0;
+}
+
+.section__button {
+    margin-bottom: 16px;
+    margin-top: 69px;
+    width: 396px;
+    height: 45px;
+    border-radius: 3px;
+    border: #4285F4;
+    background: #4285F4;
+    font-family: 'Inter', 'Arial', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    color: #FFF;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.section__button:hover {
+    opacity: 0.7;
+}
+
+.section__question {
+    margin: 0;
+    font-family: 'Inter', 'Arial', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #8B8B8B;
+}
+
+.section__link {
+    padding-left: 6px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #4285F4;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.section__link:hover {
+    opacity: 0.7;
+}
