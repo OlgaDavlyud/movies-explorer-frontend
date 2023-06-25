@@ -1,0 +1,29 @@
+.more__section {
+    height: 166px;
+    display: flex;
+    align-items: center;
+}
+
+.more__btn {
+    width: 320px;
+    height: 36px;
+    margin: 50px auto 80px;
+    background: #202020;
+    border: 1px solid #424242;
+    border-radius: 3px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.more__btn:hover {
+    opacity: 0.7;
+}
+
+.btn__text {
+    font-family: 'Inter', 'Arial', sans-serif;
+    color: #FFF;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+}

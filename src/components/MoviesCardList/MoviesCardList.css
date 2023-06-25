@@ -1,0 +1,14 @@
+.movie-card-list {
+    max-width: 100vw;
+    padding: 10px 70px 30px;
+    background: #202020;
+}
+
+.section__cards {
+    box-sizing: border-box;
+    padding-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 32px 20px;
+}
