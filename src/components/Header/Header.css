@@ -1,37 +1,30 @@
 .header {
+    max-width: 1280px;
     height: 74px;
     padding-left: 70px;
     padding-right: 70px;
     background: #073042;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.header__navigation {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-}
-
-.header__auth-link {
-    font-family: 'Inter', 'Arial', sans-serif;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    text-align: right;
-    color: #FFFFFF;
-    transition: opacity 0.3s;
-    cursor: pointer;
-}
-
-.header__auth-link:hover {
-    opacity: 0.7;
 }
 
 .header-dark {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 44px;
     background: #202020;
+}
+
+.header__container-landing {
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__container {
+    height: 74px;
+    display: flex;
+    align-items: center;
 }

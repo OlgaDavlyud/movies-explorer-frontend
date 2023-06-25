@@ -1,7 +1,7 @@
 import React from "react";
-import './HeaderBtn.css';
+import './LoginBtn.css';
 
-function HeaderBtn() {
+function LoginBtn() {
     return(
         <button className="header__login-btn">
             <p className="login-btn__text">Войти</p>
@@ -9,4 +9,4 @@ function HeaderBtn() {
     )
 }
 
-export default HeaderBtn
+export default LoginBtn
