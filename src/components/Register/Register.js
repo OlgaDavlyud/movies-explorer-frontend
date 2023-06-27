@@ -18,7 +18,7 @@ function Register() {
                         type="text"
                         name="name"
                         id="profile-name"
-                        placeholder="Имя"
+                        placeholder="Иван"
                         required=""
                         minLength={2}
                         maxLength={40}
@@ -32,7 +32,7 @@ function Register() {
                         type="email"
                         name="email"
                         id="emailAddress"
-                        placeholder="Email"
+                        placeholder="example@example.ru"
                         required=""
                         minLength={4}
                         maxLength={30}
@@ -46,7 +46,7 @@ function Register() {
                         type="password"
                         name="password"
                         id="userPassword"
-                        placeholder="Пароль"
+                        placeholder="***********"
                         required=""
                         minLength={2}
                         maxLength={200}

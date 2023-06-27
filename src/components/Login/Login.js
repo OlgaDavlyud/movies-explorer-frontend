@@ -18,7 +18,7 @@ function Login() {
                     type="email"
                     name="email"
                     id="emailAddress"
-                    placeholder="Email"
+                    placeholder="example@example.ru"
                     required=""
                     minLength={4}
                     maxLength={30}
@@ -32,7 +32,7 @@ function Login() {
                     type="password"
                     name="password"
                     id="userPassword"
-                    placeholder="Пароль"
+                    placeholder="***********"
                     required=""
                     minLength={2}
                     maxLength={200}
