@@ -1,5 +1,4 @@
 .movie-card-list {
-    padding-top: 10px;
     padding-bottom: 30px;
     background: #202020;
 }
@@ -8,11 +7,12 @@
     max-width: calc(100% - 140px);
     margin: 0 auto;
     box-sizing: border-box;
-    padding-top: 70px;
+    padding-top: 80px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-gap: 32px 20px;
+    border-top: 1px solid #424242;
 }
 
 @media screen and (max-width: 1230px) {

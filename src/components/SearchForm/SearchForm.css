@@ -2,12 +2,12 @@
     height: 222px;
     padding-left: 70px;
     padding-right: 70px;
+    background: #202020;
 }
 
 .search__form-container {
     padding-top: 70px;
     padding-bottom: 80px;
-    border-bottom: 1px solid #424242;
 }
 
 .search__form {

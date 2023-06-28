@@ -23,7 +23,6 @@ function App() {
         <Route path="/profile" element={
           <Profile
           name="Ольга"
-          email="student@ya.ru"
           >
           </Profile>}/>
         <Route path="/signin" element={<Login />}/>
@@ -34,26 +33,5 @@ function App() {
     </div>
   );
 }
-
-// function App() {
-//   return (
-//     <div className="page">
-//       <Routes>
-//         <Route path="/" element={<Main />}/>
-//         <Route path="/movies" element={<Movies />}/>
-//         <Route path="/saved-movies" element={<SavedMovies />}/>
-//         <Route path="/profile" element={
-//           <Profile
-//           name="Ольга"
-//           email="student@ya.ru"
-//           >
-//           </Profile>}/>
-//         <Route path="/signin" element={<Login />}/>
-//         <Route path="/signup" element={<Register />}/>
-//         <Route path="*" element={<PageNotFound />} />
-//       </Routes>
-//     </div>
-//   );
-// }
 
 export default App;

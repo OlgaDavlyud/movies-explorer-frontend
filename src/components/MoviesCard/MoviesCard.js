@@ -1,15 +1,19 @@
 import React from "react";
 import './MoviesCard.css';
+import { useLocation } from "react-router-dom";
 
-function MoviesCard(props) {
+function MoviesCard({movie}) {
+    let { pathname } = useLocation();
+    const { img, title, time } = movie
+
     return(
         <div className="card__movie">
-            <img className="card__img" src={props.img} alt="Заставка фильма" />
+            <img className="card__img" src={img} alt="Заставка фильма" />
             <div className="card__element">
-                <h2 className="card__title">{props.title}</h2>
-                <button className="card__button-save" type="button"></button>
+                <h2 className="card__title">{title}</h2>
+                <button className={pathname === "/movies" ? "card__button-save" : "card__button-delete"} type="button"></button>
             </div>
-            <p className="movie__time">{props.time}</p>
+            <p className="movie__time">{time}</p>
         </div>
     );
 }
