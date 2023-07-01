@@ -1,9 +1,9 @@
 .portfolio {
     background: #202020;
-    padding: 0px 50px 106px;
+    padding: 0px 70px 106px;
 }
 
-.section__title {
+.portfolio-section__title {
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -33,7 +33,6 @@
 .portfolio__title {
     margin-top: 20px;
     margin-bottom: 19px;
-
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -58,4 +57,52 @@
 
 .portfolio__link:hover {
     opacity: 0.7;
+}
+
+@media screen and (max-width: 989px) {
+    .portfolio {
+        padding-right: 50px;
+        padding-bottom: 90px;
+        padding-left: 50px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .portfolio__title {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .portfolio {
+        padding: 0 14px 70px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .portfolio-section__title {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .portfolio__container {
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .portfolio__title {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.72px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .portfolio__link {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.72px;
+    }
 }

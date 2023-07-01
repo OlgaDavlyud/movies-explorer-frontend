@@ -2,6 +2,7 @@ import React from "react";
 import './FilterCheckbox.css';
 
 function FilterCheckbox() {
+
     return(
         <div className="section__filte-checkbox">
             <label class="checkbox">

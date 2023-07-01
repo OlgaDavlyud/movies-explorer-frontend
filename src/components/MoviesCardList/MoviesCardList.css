@@ -21,3 +21,26 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+@media screen and (max-width: 989px) {
+    .section__cards {
+        max-width: calc(100% - 60px);
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 36px 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .section__cards {
+        max-width: calc(100% - 60px);
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .section__cards {
+        max-width: calc(100% - 20px);
+    }
+}

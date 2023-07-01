@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 60px;
 }
 
 .not-found__title {
@@ -11,18 +12,20 @@
     text-align: center;
     font-size: 140px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
+    line-height: normal;
     color: #FFF;
 }
 
 .not-found__text {
-    margin-top: 8px;
+    margin-top: 5px;
     margin-bottom: 0;
     font-family: 'Inter', 'Arial', sans-serif;
     text-align: center;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
+    line-height: normal;
     color: #FFF;
 }
 
@@ -33,6 +36,7 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
+    line-height: normal;
     color: #4285F4;
     text-decoration: none;
     transition: opacity 0.3s;
@@ -42,3 +46,44 @@
 .not-found__button:hover {
     opacity: 0.7;
 }
+
+@media screen and (max-width: 989px) {
+    .not-found {
+        padding-bottom: 222px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .not-found__title {
+        margin-top: 408px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .not-found {
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .not-found__title {
+        margin-top: 329px;
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .not-found__text {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .not-found__button {
+        margin-top: 284px;
+        font-size: 12px;
+    }
+}
+
+

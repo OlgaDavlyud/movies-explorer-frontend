@@ -1,19 +1,21 @@
 import React from "react";
 import './ComponentWithForm.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
 function ComponentWithForm(props) {
+    let { pathname } = useLocation();
+
     return(
         <div className="section-with-form">
             <Logo />
-            <h2 className="section__title">{props.title}</h2>
+            <h2 className="section-with-form__title">{props.title}</h2>
             <form className="section__form">
                 <div className="input__container">
                     {props.children}
                 </div>
                 <button
-                className="section__button"
+                className={ pathname !== "/signup" ? "section__btn section__btn-signin" : "section__btn section__btn-signup" }
                 type="submit"
                 name="button-submit"
                 value={props.buttonText}

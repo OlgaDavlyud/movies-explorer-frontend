@@ -66,5 +66,28 @@
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
+	font-style: normal;
     color: #FFF;
+}
+
+@media screen and (max-width: 989px) {
+    .section__filte-checkbox {
+		padding-left: 19px;
+		padding-right: 20px;
+		gap: 15px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+	.section__filte-checkbox {
+		grid-column: span 2;
+		padding: 0;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 630px) {
+	.checkbox__text {
+		font-size: 11px;
+	}
 }

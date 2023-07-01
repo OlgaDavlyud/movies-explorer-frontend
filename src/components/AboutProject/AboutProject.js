@@ -4,14 +4,18 @@ import './AboutProject.css';
 function AboutProject() {
     return(
         <section className="about-project" id="about-project">
-            <hi className="section__title">О проекте</hi>
+            <hi className="about-project-section__title">О проекте</hi>
             <article className="about-project__grid-table">
-                <h2 className="grid-table__heading">Дипломный проект включал 5 этапов</h2>
-                <h2 className="grid-table__heading">На выполнение диплома ушло 5 недель</h2>
-                <p className="grid-table__text">Составление плана, работу над бэкендом, вёрстку, добавление
+                <div>
+                    <h2 className="grid-table__heading">Дипломный проект включал 5 этапов</h2>
+                    <p className="grid-table__text">Составление плана, работу над бэкендом, вёрстку, добавление
                  функциональности и финальные доработки.</p>
-                <p className="grid-table__text"> У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было
-                соблюдать, чтобы успешно защититься.</p>
+                </div>
+                <div>
+                    <h2 className="grid-table__heading">На выполнение диплома ушло 5 недель</h2>
+                    <p className="grid-table__text"> У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было
+                    соблюдать, чтобы успешно защититься.</p>
+                </div>
             </article>
             <div className="about-project__timeline">
                 <div className="about-project__timeline-back">1 неделя</div>

@@ -24,3 +24,16 @@
     color: #000;
     text-decoration: none;
 }
+
+@media screen and (max-width: 440px) {
+    .header__login-btn  {
+        width: 54px;
+        height: 26px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .login-btn__text {
+        font-size: 10px;
+    }
+}

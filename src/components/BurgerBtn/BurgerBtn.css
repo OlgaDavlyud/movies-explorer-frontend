@@ -1,0 +1,26 @@
+.burger__btn {
+    display: none;
+    background-image: url(../../images/btn-burger-menu.svg);
+    background-repeat: no-repeat;
+    background-color: #202020;
+    border: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.burger__btn:hover {
+    opacity: 0.7;
+}
+
+.burger__btn-hidden {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .burger__btn {
+        display: block;
+    }
+}

@@ -13,6 +13,10 @@
     cursor: pointer;
 }
 
+.navigation__profile-btn:hover {
+    opacity: 0.7;
+}
+
 .profile-btn__text {
     margin: 0 8px 0 11px;
     font-family: 'Inter', 'Arial', sans-serif;
@@ -37,4 +41,16 @@
 .profile-btn__img {
     width: 10.383px;
     height: 10.669px;
+}
+
+@media screen and (max-width: 768px) {
+    .navigation__profile-btn {
+        margin: 621px auto 90px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .navigation__profile-btn {
+        margin: 444px auto 46px;
+    }
 }

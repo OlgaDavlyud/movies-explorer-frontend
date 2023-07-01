@@ -13,6 +13,7 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 import Footer from '../Footer/Footer';
 
 function App() {
+
   return (
     <div className="page">
       <Header />

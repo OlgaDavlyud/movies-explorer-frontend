@@ -19,11 +19,22 @@
     line-height: 16px;
     text-decoration-line: underline;
     color: #FFFFFF;
-
     transition: opacity 0.3s;
     cursor: pointer;
 }
 
 .navtab__link:hover {
     opacity: 0.7;
+}
+
+@media screen and (max-width: 420px) {
+    .navtab__container {
+        gap: 24px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .navtab__link {
+        font-size: 11px;
+    }
 }

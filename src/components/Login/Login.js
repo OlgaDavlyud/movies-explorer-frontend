@@ -3,7 +3,7 @@ import ComponentWithForm from '../ComponentWithForm/ComponentWithForm';
 
 function Login() {
     return(
-        <div className="login">
+        <main className="login">
             <ComponentWithForm
                 title="Рады видеть!"
                 buttonText="Войти"
@@ -40,7 +40,7 @@ function Login() {
                     <span className="section__error-visible"></span>
                 </label>
             </ComponentWithForm>
-        </div>
+        </main>
     );
 }
 

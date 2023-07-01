@@ -10,6 +10,7 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
+    line-height: normal;
     color: #FFF;
 }
 
@@ -29,6 +30,7 @@
     font-size: 11px;
     font-style: normal;
     font-weight: 500;
+    line-height: normal;
     color: #FFF;
 }
 
@@ -50,6 +52,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 220px;
 }
 
 .profile__input {
@@ -60,7 +63,8 @@
     text-align: right;
     font-size: 11px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
+    line-height: normal;
     color: #FFF;
 }
 
@@ -69,7 +73,7 @@
     text-align: center;
     font-size: 13px;
     font-style: normal;
-    font-weight: 500;
+    line-height: normal;
     background: none;
     border: none;
     transition: opacity 0.3s;
@@ -81,11 +85,54 @@
 }
 
 .profile__button-edit {
-    margin: 220px auto 0;
+    margin: 0 auto;
+    padding: 0;
+    font-weight: 400;
     color: #FFF;
 }
 
 .profile__button-exit {
     margin: 16px auto 0;
+    padding: 0;
+    font-weight: 500;
     color: #EE3465;
+}
+
+@media screen and (max-width: 989px) {
+    .profile {
+        margin-top: 236px;
+        margin-bottom: 269px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .profile__buttons {
+        margin-top: 210px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .profile {
+        max-width: calc(100% - 60px);
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .profile__container  {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .profile__buttons {
+        margin-top: 379px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .profile__button {
+        font-size: 12px;
+    }
 }

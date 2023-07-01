@@ -8,7 +8,7 @@ function SearchForm() {
     return(
         <div className="section__search-form">
             <div className="search__form-container">
-                <fotm className="search__form">
+                <form className="search__form">
                     <img className="search__icon" src={findIcon} alt="Иконка лупы"/>
                     <input
                     className="search__input"
@@ -19,7 +19,7 @@ function SearchForm() {
                     <button className="search__btn" />
                     <img className="search__form-line" src={lineSearchForm} alt="Вертикальный разделитель"  />
                     <FilterCheckbox />
-                </fotm>
+                </form>
             </div>
         </div>
     );

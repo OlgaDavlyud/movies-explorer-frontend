@@ -3,7 +3,7 @@ import ComponentWithForm from "../ComponentWithForm/ComponentWithForm";
 
 function Register() {
         return(
-            <div className="register">
+            <main className="register">
                 <ComponentWithForm
                 title="Добро пожаловать!"
                 buttonText="Зарегистрироваться"
@@ -54,7 +54,7 @@ function Register() {
                         <span className="section__error-visible"></span>
                     </label>
                 </ComponentWithForm>
-            </div>
+            </main>
         );
     }
 
