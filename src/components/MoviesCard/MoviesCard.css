@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 270px;
-    max-height: 218px;
     background: #222222;
     border-radius: 6px;
 }
@@ -79,7 +78,6 @@
 @media screen and (max-width: 989px) {
     .card__movie {
         max-width: 339px;
-        max-height: 257px;
     }
 }
 
@@ -93,7 +91,6 @@
 @media screen and (max-width: 767px) {
     .card__movie {
         max-width: 300px;
-        max-height: 235px;
     }
 }
 

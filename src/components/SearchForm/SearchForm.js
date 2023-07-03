@@ -6,7 +6,7 @@ import lineSearchForm from '../../images/line-search-form.svg';
 
 function SearchForm() {
     return(
-        <div className="section__search-form">
+        <section className="section__search-form">
             <div className="search__form-container">
                 <form className="search__form">
                     <img className="search__icon" src={findIcon} alt="Иконка лупы"/>
@@ -21,7 +21,7 @@ function SearchForm() {
                     <FilterCheckbox />
                 </form>
             </div>
-        </div>
+        </section>
     );
 }
 

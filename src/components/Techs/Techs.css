@@ -12,6 +12,8 @@
     line-height: 27px;
     letter-spacing: -0.04em;
     color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .technologies__container {

@@ -5,11 +5,11 @@ import myPhoto from "../../images/IMG_9715 (1).jpeg"
 function AboutMe() {
     return(
         <section className="about-me" id="about-me">
-            <hi className="about-me-section__title">Студент</hi>
+            <h2 className="about-me-section__title">Студент</h2>
             <div className="section__container">
                 <div className="about-me__info">
-                    <h2 className="about-me__title">Ольга</h2>
-                    <h3 className="about-me__subtitle">Фронтенд-разработчик, 28 лет</h3>
+                    <h3 className="about-me__title">Ольга</h3>
+                    <h4 className="about-me__subtitle">Фронтенд-разработчик, 28 лет</h4>
                     <p className="about-me__description">Я родилась и живу в Москве, закончила факультет экономики МГПУ.
                     У меня есть любимый пес, а еще попугай и черепаха.
                     Я люблю читать книги, увлекаюсь сноубордом, бегом и фигурным катанием. Уже целый год я изучаю код.

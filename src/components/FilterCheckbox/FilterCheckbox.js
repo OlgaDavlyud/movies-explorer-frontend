@@ -5,9 +5,9 @@ function FilterCheckbox() {
 
     return(
         <div className="section__filte-checkbox">
-            <label class="checkbox">
+            <label className="checkbox">
                 <input type="checkbox" />
-                <span class="checkbox-switch"></span>
+                <span className="checkbox-switch"></span>
             </label>
             <p className="checkbox__text">Короткометражки</p>
         </div>

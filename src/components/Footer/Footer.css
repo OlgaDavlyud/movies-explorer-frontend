@@ -1,6 +1,4 @@
 .footer {
-    max-height: 172px;
-    background: #202020;
     padding-top: 79px;
 }
 
@@ -12,6 +10,8 @@
     font-size: 13px;
     text-align: right;
     color: #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .footer__signature {
@@ -27,7 +27,7 @@
 }
 
 .footer__container {
-    margin: 20px 70px;
+    margin: 20px 70px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;

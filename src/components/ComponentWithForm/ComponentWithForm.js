@@ -7,9 +7,9 @@ function ComponentWithForm(props) {
     let { pathname } = useLocation();
 
     return(
-        <div className="section-with-form">
+        <section className="section-with-form">
             <Logo />
-            <h2 className="section-with-form__title">{props.title}</h2>
+            <h1 className="section-with-form__title">{props.title}</h1>
             <form className="section__form">
                 <div className="input__container">
                     {props.children}
@@ -22,7 +22,7 @@ function ComponentWithForm(props) {
                 >{props.buttonText}</button>
                 <p className="section__question">{props.question}<Link className="section__link" to={ props.path } >{props.textPath}</Link></p>
             </form>
-        </div>
+        </section>
     );
 }
 

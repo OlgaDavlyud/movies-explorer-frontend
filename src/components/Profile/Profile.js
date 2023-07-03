@@ -6,7 +6,7 @@ function Profile(props) {
 
     return(
         <main className="profile">
-            <h2 className="profile__title">Привет, {props.name}!</h2>
+            <h1 className="profile__title">Привет, {props.name}!</h1>
             <div className="profile__container">
                 <label className="profile__name">
                     <span className="profile__input-title">Имя</span>

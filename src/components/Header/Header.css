@@ -17,14 +17,12 @@
 }
 
 .header__container-landing {
-    height: 74px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .header__container {
-    height: 74px;
     display: flex;
     align-items: center;
 }

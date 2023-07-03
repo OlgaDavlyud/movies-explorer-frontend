@@ -25,6 +25,7 @@
     line-height: 12px;
     text-align: center;
     color: #FFF;
+    text-decoration: none;
 }
 
 .profile-btn__img-background {
@@ -45,12 +46,12 @@
 
 @media screen and (max-width: 768px) {
     .navigation__profile-btn {
-        margin: 621px auto 90px;
+        margin: 0 auto 90px;
     }
 }
 
 @media screen and (max-width: 555px) {
     .navigation__profile-btn {
-        margin: 444px auto 46px;
+        margin-bottom: 46px;
     }
 }
