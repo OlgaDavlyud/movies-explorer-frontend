@@ -2,6 +2,7 @@
     display: none;
     background-image: url(../../images/btn-burger-menu.svg);
     background-repeat: no-repeat;
+    background-position: center;
     background-color: #202020;
     border: none;
     width: 44px;
@@ -22,5 +23,14 @@
 @media screen and (max-width: 768px) {
     .burger__btn {
         display: block;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .burger__btn {
+        width: 40px;
+        height: 43px;
+        background-image: url(../../images/mimi-btn-burger-menu.svg);
+        background-position: top -2px center;
     }
 }

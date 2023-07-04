@@ -1,4 +1,5 @@
 import React from 'react';
+import './SavedMovies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import MoreBtn from '../MoreBtn/MoreBtn';
@@ -10,6 +11,7 @@ function SavedMovies() {
             <SearchForm />
             <MoviesCardList movies={savedMoviesList} />
             <MoreBtn />
+            <div className='decoration-block'></div>
         </main>
     );
 }

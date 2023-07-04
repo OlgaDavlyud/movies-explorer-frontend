@@ -2,7 +2,6 @@ import React from "react";
 import './SearchForm.css';
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import findIcon from '../../images/find-icon.svg';
-import lineSearchForm from '../../images/line-search-form.svg';
 
 function SearchForm() {
     return(
@@ -17,9 +16,8 @@ function SearchForm() {
                     >
                     </input>
                     <button className="search__btn" />
-                    <img className="search__form-line" src={lineSearchForm} alt="Вертикальный разделитель"  />
-                    <FilterCheckbox />
                 </form>
+                <FilterCheckbox />
             </div>
         </section>
     );

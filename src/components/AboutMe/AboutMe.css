@@ -143,7 +143,7 @@
 
 @media screen and (max-width: 555px) {
     .about-me {
-        padding: 70px 14px;
+        padding: 71px 14px;
     }
 }
 
@@ -190,7 +190,7 @@
 
 @media screen and (max-width: 555px) {
     .about-me__description {
-        margin-bottom: 40px;
+        margin-bottom: 24px;
         font-size: 11px;
         line-height: 16px;
     }

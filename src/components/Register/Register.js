@@ -51,7 +51,7 @@ function Register() {
                         minLength={2}
                         maxLength={200}
                         />
-                        <span className="section__error-visible"></span>
+                        <span className="section__error-visible">Что-то пошло не так...</span>
                     </label>
                 </ComponentWithForm>
             </main>

@@ -52,15 +52,14 @@
 }
 
 @media screen and (max-width: 989px) {
-    .footer {
-       padding-top: 59px;
+    .footer  {
+        padding-top: 61px;
     }
 }
 
 @media screen and (max-width: 989px) {
     .footer__container  {
         margin: 0 30px;
-        padding-top: 6px;
     }
 }
 
@@ -68,6 +67,7 @@
     .footer  {
         max-width: calc(100% - 20px);
         margin: 0 auto;
+        padding-top: 79px;
         max-height: 253px;
     }
 }
@@ -75,6 +75,8 @@
 @media screen and (max-width: 440px) {
     .footer__text  {
         font-size: 12px;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
@@ -99,7 +101,7 @@
         flex-direction: column;
         gap: 12px;
         align-items: center;
-        margin-top: 30px;
+        margin-top: 31px;
     }
 }
 

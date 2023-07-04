@@ -21,19 +21,20 @@
 .section__form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .input__container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
     margin-bottom: 65px;
 }
 
 .input__title {
     margin-top: 0;
-    margin-bottom: 5px;
+    margin-bottom: 0;
+    padding-top: 4px;
     font-family: 'Inter', 'Arial', sans-serif;
     font-size: 10px;
     font-style: normal;
@@ -43,7 +44,8 @@
 }
 
 .section__input {
-    width: 390px;
+    width: 100%;
+    margin-top: 5px;
     padding: 0 0 10px;
     font-family: 'Inter', 'Arial', sans-serif;
     font-size: 14px;
@@ -96,7 +98,7 @@
 }
 
 .section__btn-signin {
-    margin-top: 93px;
+    margin-top: 155px;
 }
 
 .section__btn:hover {
@@ -150,8 +152,8 @@
 
 @media screen and (max-width: 420px) {
     .section-with-form__title {
-        padding-top: 50px;
-        padding-bottom: 80px;
+        padding-top: 45px;
+        padding-bottom: 76px;
         text-align: center;
     }
 }
@@ -178,7 +180,7 @@
 
 @media screen and (max-width: 420px) {
     .section__btn-signin {
-        margin-top: 181px;
+        margin-top: 245px;
     }
 }
 

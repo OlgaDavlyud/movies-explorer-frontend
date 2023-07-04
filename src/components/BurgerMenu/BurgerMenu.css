@@ -19,15 +19,15 @@
     background: #202020;
     display: flex;
     flex-direction: column;
-    gap: 621px;
+    gap: 617px;
 }
 
 .burger-menu__button-close {
     width: 22px;
     height: 22px;
     position: absolute;
-    top: 22.44px;
-    right: 22.44px;
+    top: 26.4px;
+    right: 26.4px;
     padding: 0;
     background-image: url(../../images/close-burger-btn.svg);
     background-repeat: no-repeat;
@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
+    gap: 24px;
     margin: 159px auto 0;
 }
 
@@ -85,7 +85,7 @@
 @media screen and (max-width: 555px) {
     .burger-menu__container {
         width: 100%;
-        gap: 444px;
+        gap: 437px;
     }
 }
 
@@ -93,8 +93,8 @@
     .burger-menu__button-close {
         width: 22px;
         height: 22px;
-        top: 13.44px;
-        right: 13.44px;
+        top: 18px;
+        right: 18px;
 
     }
 }
@@ -102,7 +102,7 @@
 @media screen and (max-width: 555px) {
     .burger-menu__links {
         margin-top: 144px;
-        gap: 24px;
+        gap: 17px;
     }
 }
 

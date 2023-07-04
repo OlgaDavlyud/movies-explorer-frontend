@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom';
 
 function Profile(props) {
 
+    function editProfile() {
+        const inputName = document.getElementById('nameProfile');
+        const inputEmail = document.getElementById('emailProfile');
+        inputName.disabled = false;
+        inputEmail.disabled = false;
+        inputName.focus();
+    }
+
     return(
         <main className="profile">
             <h1 className="profile__title">Привет, {props.name}!</h1>
@@ -36,9 +44,9 @@ function Profile(props) {
                 </label>
             </div>
             <div className="profile__buttons">
-                <button className="profile__button profile__button-edit">Редактировать</button>
+                <button className="profile__button profile__button-edit" type="button" onClick={editProfile}>Редактировать</button>
                 <Link to="/">
-                    <button className="profile__button profile__button-exit">Выйти из аккаунта</button>
+                    <button className="profile__button profile__button-exit" type="button">Выйти из аккаунта</button>
                 </Link>
             </div>
         </main>

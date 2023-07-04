@@ -23,7 +23,6 @@
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     border-bottom: 1px solid #424242;
 }
 
@@ -44,6 +43,10 @@
 }
 
 .portfolio__link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     text-decoration: none;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
@@ -51,6 +54,7 @@
     color: #FFF;
     font-size: 30px;
     line-height: 50px;
+    text-align: right;
     letter-spacing: -1.2px;
     transition: opacity 0.3s;
     cursor: pointer;
@@ -76,7 +80,7 @@
 
 @media screen and (max-width: 555px) {
     .portfolio {
-        padding: 0 14px 70px;
+        padding: 0 14px 51px;
     }
 }
 
@@ -88,7 +92,7 @@
 
 @media screen and (max-width: 555px) {
     .portfolio__container {
-        padding-top: 40px;
+        padding-top: 18px;
     }
 }
 
