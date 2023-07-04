@@ -3,7 +3,7 @@ import './LoginBtn.css';
 
 function LoginBtn() {
     return(
-        <button className="header__login-btn">
+        <button className="login-btn" type="button">
             <p className="login-btn__text">Войти</p>
         </button>
     )

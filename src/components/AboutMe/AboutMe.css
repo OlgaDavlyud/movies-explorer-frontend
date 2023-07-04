@@ -2,7 +2,7 @@
     padding: 110px 70px 100px;
 }
 
-.about-me-section__title {
+.about-me__section-title {
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -14,7 +14,7 @@
     margin-bottom: 0;
 }
 
-.section__container {
+.about-me__container {
     border-top: 1px solid #DADADA;
     margin-top: 23px;
     display: flex;
@@ -93,13 +93,13 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .section__container {
+    .about-me__container {
         gap: 100px;
     }
 }
 
 @media screen and (max-width: 989px) {
-    .section__container {
+    .about-me__container {
         gap: 49px;
     }
 }
@@ -148,7 +148,7 @@
 }
 
 @media screen and (max-width: 555px) {
-    .about-me-section__title {
+    .about-me__section-title {
         font-size: 18px;
         line-height: normal;
         letter-spacing: -0.72px;
@@ -156,7 +156,7 @@
 }
 
 @media screen and (max-width: 690px) {
-    .section__container{
+    .about-me__container {
         margin-top: 28px;
         padding-top: 60px;
         align-items: center;

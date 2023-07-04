@@ -1,9 +1,9 @@
-.more__section {
+.more {
     display: flex;
     align-items: center;
 }
 
-.more__section-hidden {
+.more-hidden {
     display: none;
 }
 
@@ -27,7 +27,7 @@
     opacity: 0.7;
 }
 
-.btn__text {
+.more__btn-text {
     font-family: 'Inter', 'Arial', sans-serif;
     color: #FFF;
     text-align: center;

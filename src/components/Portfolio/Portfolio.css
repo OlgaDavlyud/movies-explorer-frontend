@@ -2,7 +2,7 @@
     padding: 0px 70px 106px;
 }
 
-.portfolio-section__title {
+.portfolio__section-title {
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -85,7 +85,7 @@
 }
 
 @media screen and (max-width: 555px) {
-    .portfolio-section__title {
+    .portfolio__section-title {
         font-size: 14px;
     }
 }

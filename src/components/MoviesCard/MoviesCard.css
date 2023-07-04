@@ -1,4 +1,4 @@
-.card__movie {
+.card-movie {
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 270px;
@@ -6,12 +6,16 @@
     border-radius: 6px;
 }
 
-.card__img {
+.card-movie__link {
+    text-decoration: none;
+}
+
+.card-movie__img {
     width: 270px;
     height: 151px;
 }
 
-.card__element {
+.card-movie__element {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
@@ -19,7 +23,7 @@
     padding-right: 12px;
 }
 
-.card__title {
+.card-movie__title {
     margin: 0;
     font-family: 'Inter', 'Arial', sans-serif;
     color: #FFF;
@@ -32,20 +36,26 @@
     overflow: hidden;
 }
 
-.card__button-save {
+.card-movie__button-save {
     width: 16px;
     height: 16px;
     padding: 0;
     background: #313131;
     border-radius: 50%;
     border: 2px solid #FFF;
+    transition: opacity 0.3s;
+    cursor: pointer;
 }
 
-.card__button-save:active {
+.card-movie__button-save:hover {
+    opacity: 0.7;
+}
+
+.card-movie__button-save:active {
     background: #3DDC84;
 }
 
-.card__button-delete {
+.card-movie__button-delete {
     width: 16px;
     height: 16px;
     padding: 0;
@@ -58,11 +68,11 @@
     cursor: pointer;
 }
 
-.card__button-delete:hover {
+.card-movie__button-delete:hover {
     opacity: 0.7;
 }
 
-.movie__time {
+.card-movie__time {
     font-family: 'Inter', 'Arial', sans-serif;
     color: #8B8B8B;
     font-size: 11px;
@@ -76,26 +86,26 @@
 }
 
 @media screen and (max-width: 989px) {
-    .card__movie {
+    .card-movie {
         max-width: 339px;
     }
 }
 
 @media screen and (max-width: 989px) {
-    .card__img {
+    .card-movie__img {
         width: 339px;
         height: 190px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .card__movie {
+    .card-movie {
         max-width: 300px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .card__img {
+    .card-movie__img {
         width: 300px;
         height: 168px;
     }

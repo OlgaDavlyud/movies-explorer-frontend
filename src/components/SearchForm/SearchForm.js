@@ -5,17 +5,17 @@ import findIcon from '../../images/find-icon.svg';
 
 function SearchForm() {
     return(
-        <section className="section__search-form">
-            <div className="search__form-container">
-                <form className="search__form">
-                    <img className="search__icon" src={findIcon} alt="Иконка лупы"/>
+        <section className="search-form">
+            <div className="search-form__container">
+                <form className="search-form__form">
+                    <img className="search-form__icon" src={findIcon} alt="Иконка лупы"/>
                     <input
-                    className="search__input"
+                    className="search-form__input"
                     type="text"
                     placeholder="Фильм"
                     >
                     </input>
-                    <button className="search__btn" />
+                    <button className="search-form__btn" type="submit"/>
                 </form>
                 <FilterCheckbox />
             </div>

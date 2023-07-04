@@ -16,17 +16,6 @@
     background: #202020;
 }
 
-.header__container-landing {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header__container {
-    display: flex;
-    align-items: center;
-}
-
 @media screen and (max-width: 989px) {
     .header {
         padding-left: 30px;

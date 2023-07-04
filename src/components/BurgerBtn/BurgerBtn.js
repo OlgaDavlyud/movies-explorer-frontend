@@ -6,7 +6,7 @@ function BurgerBtn(props) {
     let { pathname } = useLocation();
 
     return(
-        <button className={pathname !== '/' ? "burger__btn" : "burger__btn-hidden" } type="button" onClick={props.onClick} />
+        <button className={pathname !== '/' ? "burger-btn" : "burger-btn-hidden" } type="button" onClick={props.onClick} />
     )
 }
 

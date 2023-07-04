@@ -3,7 +3,7 @@
     margin: 0 auto;
 }
 
-.section__cards {
+.movie-card-list__section-cards {
     margin: 0 auto;
     box-sizing: border-box;
     padding-top: 80px;
@@ -16,7 +16,7 @@
 }
 
 @media screen and (max-width: 1279px) {
-    .section__cards {
+    .movie-card-list__section-cards {
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -28,14 +28,14 @@
 }
 
 @media screen and (max-width: 989px) {
-    .section__cards {
+    .movie-card-list__section-cards {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 36px 30px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .section__cards {
+    .movie-card-list__section-cards {
         grid-template-columns: 1fr;
         gap: 20px;
         padding-top: 50px;

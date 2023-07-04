@@ -11,33 +11,33 @@ function Login() {
                 path="/signup"
                 textPath="Регистрация"
             >
-                <label className="input__field">
-                    <p className="input__title">E-mail</p>
+                <label className="section-with-form__input-field">
+                    <p className="section-with-form__input-title">E-mail</p>
                     <input
-                    className="section__input"
+                    className="section-with-form__input"
                     type="email"
                     name="email"
                     id="emailAddress"
                     placeholder="example@example.ru"
-                    required=""
+                    required
                     minLength={4}
                     maxLength={30}
                     />
-                    <span className="section__error-visible" />
+                    <span className="section-with-form__error-visible" />
                 </label>
-                <label className="input__field">
-                    <p className="input__title">Пароль</p>
+                <label className="section-with-form__input-field">
+                    <p className="section-with-form__input-title">Пароль</p>
                     <input
-                    className="section__input"
+                    className="section-with-form__input"
                     type="password"
                     name="password"
                     id="userPassword"
                     placeholder="***********"
-                    required=""
+                    required
                     minLength={2}
                     maxLength={200}
                     />
-                    <span className="section__error-visible"></span>
+                    <span className="section-with-form__error-visible"></span>
                 </label>
             </ComponentWithForm>
         </main>

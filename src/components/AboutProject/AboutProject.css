@@ -2,7 +2,7 @@
     padding: 110px 70px;
 }
 
-.about-project-section__title {
+.about-project__section-title {
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -14,7 +14,7 @@
     margin-bottom: 0;
 }
 
-.about-project__grid-table {
+.about-project-grid-table {
     border-top: 1px solid #DADADA;
     margin: 23px 0 110px;
     padding-left: 0;
@@ -24,7 +24,7 @@
     gap: 40px;
 }
 
-.grid-table__heading {
+.about-project-grid-table__heading {
     margin: 0;
     padding-top: 70px;
     font-family: 'Inter', 'Arial', sans-serif;
@@ -36,7 +36,7 @@
     color: #FFFFFF;
 }
 
-.grid-table__text {
+.about-project-grid-table__text {
     margin-top: 26px;
     margin-bottom: 0;
     font-family: 'Inter', 'Arial', sans-serif;
@@ -95,20 +95,20 @@
 }
 
 @media screen and (max-width: 989px) {
-    .about-project__grid-table {
+    .about-project-grid-table {
         margin-bottom: 93px;
         gap: 30px;
     }
 }
 
 @media screen and (max-width: 989px) {
-    .about-project-section__title {
+    .about-project__section-title {
         letter-spacing: -0.88px;
     }
 }
 
 @media screen and (max-width: 989px) {
-    .grid-table__text {
+    .about-project-grid-table__text {
         margin-top: 22px;
         font-size: 12px;
         line-height: 18px;
@@ -122,14 +122,14 @@
 }
 
 @media screen and (max-width: 555px) {
-    .about-project-section__title {
+    .about-project__section-title {
         font-size: 18px;
         letter-spacing: -0.72px;
     }
 }
 
 @media screen and (max-width: 555px) {
-    .about-project__grid-table {
+    .about-project-grid-table {
         margin: 25px 0 60px;
         padding-top: 60px;
         grid-template-columns: 1fr;
@@ -138,7 +138,7 @@
 }
 
 @media screen and (max-width: 555px) {
-    .grid-table__heading {
+    .about-project-grid-table__heading {
         padding: 0;
         font-size: 18px;
         letter-spacing: -0.72px;
@@ -146,7 +146,7 @@
 }
 
 @media screen and (max-width: 555px) {
-    .grid-table__text {
+    .about-project-grid-table__text {
         margin-top: 16px;
         font-size: 11px;
         line-height: 16px;

@@ -6,7 +6,7 @@ function MoviesCardList(props) {
 
     return(
         <section className="movie-card-list">
-            <div className="section__cards">
+            <div className="movie-card-list__section-cards">
                 {
                     props.movies.map((movie) => (
                     <MoviesCard

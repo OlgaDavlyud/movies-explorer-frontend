@@ -24,6 +24,7 @@ function App() {
         <Route path="/profile" element={
           <Profile
           name="Ольга"
+          email="student@ya.ru"
           >
           </Profile>}/>
         <Route path="/signin" element={<Login />}/>

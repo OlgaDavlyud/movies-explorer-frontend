@@ -1,14 +1,14 @@
-.section__search-form {
+.search-form {
     max-width: calc(100% - 140px);
     margin: 0 auto;
 }
 
-.search__form-container {
+.search-form__container {
     display: grid;
     grid-template-columns: 4fr 1fr;
 }
 
-.search__form {
+.search-form__form {
     margin-top: 70px;
     margin-bottom: 70px;
     border-radius: 9px 0 0 9px;
@@ -17,13 +17,13 @@
     align-items: center;
 }
 
-.search__icon {
+.search-form__icon {
     width: 34px;
     height: 34px;
     margin: 19px 10px 19px 19px;
 }
 
-.search__input {
+.search-form__input {
     width: 100%;
     background: #2F2F2F;
     border: none;
@@ -34,7 +34,7 @@
     color: #FFF;
 }
 
-.search__btn {
+.search-form__btn {
     margin-right: 30px;
     width: 80px;
     height: 34px;
@@ -48,63 +48,57 @@
     cursor: pointer;
 }
 
-.search__btn:hover {
+.search-form__btn:hover {
     opacity: 0.7;
 }
 
 @media screen and (max-width: 989px) {
-    .section__search-form {
+    .search-form {
         max-width: calc(100% - 60px);
     }
 }
 
 @media screen and (max-width: 989px) {
-    .search__form{
+    .search-form__form {
         margin-top: 80px;
         margin-bottom: 109px;
     }
 }
 
 @media screen and (max-width: 989px) {
-    .search__btn {
+    .search-form__btn {
         margin-right: 19px;
     }
 }
 
 @media screen and (max-width: 630px) {
-    .section__search-form {
+    .search-form {
         max-width: calc(100% - 20px);
         padding: 0;
     }
 }
 
 @media screen and (max-width: 630px) {
-    .search__form-container {
+    .search-form__container {
         grid-template-columns: 1fr;
     }
 }
 
 @media screen and (max-width: 630px) {
-    .search__icon {
+    .search-form__icon {
         display: none;
     }
 }
 
 @media screen and (max-width: 630px) {
-    .search__form-line  {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 630px) {
-    .search__form {
+    .search-form__form {
         border-radius: 9px;
         margin-bottom: 0;
     }
 }
 
 @media screen and (max-width: 630px) {
-    .search__input {
+    .search-form__input {
         margin-left: 19px;
         margin-top: 25px;
         margin-bottom: 25px;

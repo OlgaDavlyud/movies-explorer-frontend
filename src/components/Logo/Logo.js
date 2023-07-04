@@ -1,15 +1,17 @@
 import React from "react";
-import logo from '../../images/logo.svg'
+import { Link } from "react-router-dom";
+import "./Logo.css";
+import logo from "../../images/logo.svg";
 
 function Logo() {
     return(
-        <a href="/">
+        <Link className="logo" to="/">
             <img
-                className="header__logo"
+                className="logo"
                 src={logo}
                 alt="Логотип проекта"
             />
-        </a>
+        </Link>
     );
 }
 

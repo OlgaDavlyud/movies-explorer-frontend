@@ -6,9 +6,9 @@ function MoreBtn({ hidden, onClick }) {
     let { pathname } = useLocation();
 
     return(
-        <div className={ hidden ? "more__section-hidden" : "more__section"}>
+        <div className={ hidden ? "more-hidden" : "more"}>
             <button className={ pathname === '/movies' ? "more__btn" : "more__btn-hidden" } type="button" onClick={ onClick }>
-                <p className="btn__text">Ещё</p>
+                <p className="more__btn-text">Ещё</p>
             </button>
         </div>
     );

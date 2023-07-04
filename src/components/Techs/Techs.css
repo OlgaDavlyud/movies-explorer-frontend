@@ -3,7 +3,7 @@
     background: #272727;
 }
 
-.technologies-section__title {
+.technologies__title-section {
     padding: 0;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
@@ -125,7 +125,7 @@
 }
 
 @media screen and (max-width: 555px) {
-    .technologies-section__title {
+    .technologies__title-section {
         font-size: 18px;
         line-height: normal;
         letter-spacing: -0.72px;
