@@ -12,7 +12,7 @@ function Login() {
                 textPath="Регистрация"
             >
                 <label className="section-with-form__input-field">
-                    <p className="section-with-form__input-title">E-mail</p>
+                    <span className="section-with-form__input-title">E-mail</span>
                     <input
                     className="section-with-form__input"
                     type="email"
@@ -23,10 +23,10 @@ function Login() {
                     minLength={4}
                     maxLength={30}
                     />
-                    <span className="section-with-form__error-visible" />
+                    <span className="section-with-form__error-visible"></span>
                 </label>
                 <label className="section-with-form__input-field">
-                    <p className="section-with-form__input-title">Пароль</p>
+                    <span className="section-with-form__input-title">Пароль</span>
                     <input
                     className="section-with-form__input"
                     type="password"

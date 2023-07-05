@@ -48,6 +48,8 @@
     align-items: center;
     gap: 24px;
     margin: 159px auto 0;
+    padding-left: 0;
+    list-style-type: none;
 }
 
 .burger-menu__link {
@@ -71,6 +73,10 @@
 .burger-menu__link:active {
     width: fit-content;
     border-bottom: 2px solid #FFF;
+}
+
+.burger__profile-btn {
+    text-decoration: none;
 }
 
 @media screen and (max-width: 768px) {

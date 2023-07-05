@@ -5,7 +5,7 @@ import profileIcon from "../../images/profile-icon.svg";
 function NavigationBtn() {
     return(
         <button className="profile-btn" type="button">
-            <p className="profile-btn__text">Аккаунт</p>
+            <span className="profile-btn__text">Аккаунт</span>
             <div className="profile-btn__img-background">
                 <img
                     className="profile-btn__img"

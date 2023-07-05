@@ -8,7 +8,7 @@ function MoreBtn({ hidden, onClick }) {
     return(
         <div className={ hidden ? "more-hidden" : "more"}>
             <button className={ pathname === '/movies' ? "more__btn" : "more__btn-hidden" } type="button" onClick={ onClick }>
-                <p className="more__btn-text">Ещё</p>
+                <span className="more__btn-text">Ещё</span>
             </button>
         </div>
     );

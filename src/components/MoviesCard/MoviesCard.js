@@ -7,7 +7,7 @@ function MoviesCard({movie}) {
     const { trailerLink, image, description, nameRU, duration } = movie;
 
     return(
-        <div className="card-movie" id={movie.Id}>
+        <li className="card-movie" id={movie.Id}>
             <a className="card-movie__link" href={trailerLink} target="blank" rel="noopener noreferrer">
                 <img className="card-movie__img" src={image} alt={description} />
             </a>
@@ -16,7 +16,7 @@ function MoviesCard({movie}) {
                 <button className={pathname === "/movies" ? "card-movie__button-save" : "card-movie__button-delete"} type="button"></button>
             </div>
             <p className="card-movie__time">{duration}</p>
-        </div>
+        </li>
     );
 }
 

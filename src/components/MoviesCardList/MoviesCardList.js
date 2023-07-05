@@ -6,7 +6,7 @@ function MoviesCardList(props) {
 
     return(
         <section className="movie-card-list">
-            <div className="movie-card-list__section-cards">
+            <ul className="movie-card-list__section-cards">
                 {
                     props.movies.map((movie) => (
                     <MoviesCard
@@ -14,7 +14,7 @@ function MoviesCardList(props) {
                         movie={movie}
                     />
                 ))}
-            </div>
+            </ul>
         </section>
     )
 };

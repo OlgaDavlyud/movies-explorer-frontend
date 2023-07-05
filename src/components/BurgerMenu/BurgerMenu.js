@@ -14,12 +14,18 @@ function BurgerMenu(props) {
                     name="button-close"
                     onClick={props.onClose}
                 />
-                <nav className="burger-menu__links">
-                    <Link className="burger-menu__link" to='/'>Главная</Link>
-                    <Link className="burger-menu__link" to='/movies'>Фильмы</Link>
-                    <Link className="burger-menu__link" to='/saved-movies'>Сохранённые фильмы</Link>
-                </nav>
-                <Link to="/profile"><NavigationBtn /></Link>
+                <ul className="burger-menu__links">
+                    <li>
+                        <Link className="burger-menu__link" to='/'>Главная</Link>
+                    </li>
+                    <li>
+                        <Link className="burger-menu__link" to='/movies'>Фильмы</Link>
+                    </li>
+                    <li>
+                        <Link className="burger-menu__link" to='/saved-movies'>Сохранённые фильмы</Link>
+                    </li>
+                </ul>
+                <Link className="burger__profile-btn" to="/profile"><NavigationBtn /></Link>
             </div>
         </div>
     )

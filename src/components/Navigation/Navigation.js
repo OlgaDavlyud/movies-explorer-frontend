@@ -20,7 +20,9 @@ function Navigation(props) {
 
     const navigationHeaderLanding = (
         <>
-            <Link to='/signup' className="navigation__auth-link">Регистрация</Link>
+            <Link to='/signup' className="navigation__auth-link">
+                <button className="navigation__register-btn" type="button">Регистрация</button>
+            </Link>
             <Link to="/signin"><LoginBtn /></Link>
         </>
     )
@@ -28,10 +30,14 @@ function Navigation(props) {
     const navigationHeader = (
         <>
             <div className="navigation-hidden">
-                <div className="navigation__container-link">
-                    <Link className="navigation__link" to='/movies'>Фильмы</Link>
-                    <Link className="navigation__link" to='/saved-movies'>Сохранённые фильмы</Link>
-                </div>
+                <ul className="navigation__container-link">
+                    <li>
+                        <Link className="navigation__link" to='/movies'>Фильмы</Link>
+                    </li>
+                    <li>
+                        <Link className="navigation__link" to='/saved-movies'>Сохранённые фильмы</Link>
+                    </li>
+                </ul>
                 <Link className="navigation__profile-btn" to="/profile"><NavigationBtn /></Link>
             </div>
         </>
