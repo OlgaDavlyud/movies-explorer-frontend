@@ -10,7 +10,7 @@ export const moviesList = [
         thumbnail:"https://krasivosti.pro/uploads/posts/2023-01/1674731755_krasivosti-pro-p-lev-i-cherepakha-zhivotnie-instagram-3.jpg",
         owner:"user1",
         movieId:"58573-2vgre",
-        nameRU:"Львёнок и черепаха",
+        nameRU:"33 слова о дизайне",
         nameEN:"Lion cub and turtle"
     },
     {
@@ -265,7 +265,7 @@ export const savedMoviesList = [
         thumbnail:"https://klike.net/uploads/posts/2022-11/1668330237_3-11.jpg",
         owner:"user0023811",
         movieId:"1356283GF",
-        nameRU:"Буратино",
+        nameRU:"33 слова о дизайне",
         nameEN:"Pinocchio"
     },
 ];

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import './BurgerMenu.css';
 import NavigationBtn from "../NavigationBtn/NavigationBtn";
 
@@ -14,17 +14,19 @@ function BurgerMenu(props) {
                     name="button-close"
                     onClick={props.onClose}
                 />
-                <ul className="burger-menu__links">
-                    <li>
-                        <Link className="burger-menu__link" to='/'>Главная</Link>
-                    </li>
-                    <li>
-                        <Link className="burger-menu__link" to='/movies'>Фильмы</Link>
-                    </li>
-                    <li>
-                        <Link className="burger-menu__link" to='/saved-movies'>Сохранённые фильмы</Link>
-                    </li>
-                </ul>
+                <nav className="burger-menu__navigation" id="sidebar">
+                    <ul className="burger-menu__links">
+                        <li>
+                            <NavLink className="burger-menu__link" to='/'>Главная</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="burger-menu__link" to='/movies'>Фильмы</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="burger-menu__link" to='/saved-movies'>Сохранённые фильмы</NavLink>
+                        </li>
+                    </ul>
+                </nav>
                 <Link className="burger__profile-btn" to="/profile"><NavigationBtn /></Link>
             </div>
         </div>

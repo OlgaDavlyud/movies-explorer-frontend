@@ -1,5 +1,5 @@
 .footer {
-    padding-top: 79px;
+    padding-top: 80px;
 }
 
 .footer__text {
@@ -10,13 +10,11 @@
     font-size: 13px;
     text-align: right;
     color: #FFFFFF;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .footer__signature {
     max-width: 320px;
-    margin: 0px auto 20px;
+    margin: 0px auto 18px;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -27,7 +25,8 @@
 }
 
 .footer__container {
-    margin: 20px 70px 0;
+    margin: 0 70px 20px;
+    padding-top: 19px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,9 +53,13 @@
     opacity: 0.7;
 }
 
+.footer__date {
+    margin: 0;
+}
+
 @media screen and (max-width: 989px) {
     .footer  {
-        padding-top: 61px;
+        padding-top: 78px;
     }
 }
 
@@ -71,7 +74,6 @@
         max-width: calc(100% - 20px);
         margin: 0 auto;
         padding-top: 79px;
-        max-height: 253px;
     }
 }
 
@@ -95,6 +97,7 @@
     .footer__container {
         max-width: 300px;
         margin: 20px auto;
+        padding-top: 27px;
         flex-direction: column-reverse;
     }
 }
@@ -102,9 +105,9 @@
 @media screen and (max-width: 440px) {
     .footer__links {
         flex-direction: column;
-        gap: 12px;
+        gap: 8px;
         align-items: center;
-        margin-top: 31px;
+        margin-top: 0;
     }
 }
 

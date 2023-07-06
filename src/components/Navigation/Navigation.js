@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import './Navigation.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import NavigationBtn from "../NavigationBtn/NavigationBtn";
 import LoginBtn from "../LoginBtn/LoginBtn";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
@@ -32,10 +32,10 @@ function Navigation(props) {
             <div className="navigation-hidden">
                 <ul className="navigation__container-link">
                     <li>
-                        <Link className="navigation__link" to='/movies'>Фильмы</Link>
+                        <NavLink className="navigation__link" to='/movies'>Фильмы</NavLink>
                     </li>
                     <li>
-                        <Link className="navigation__link" to='/saved-movies'>Сохранённые фильмы</Link>
+                        <NavLink className="navigation__link" to='/saved-movies'>Сохранённые фильмы</NavLink>
                     </li>
                 </ul>
                 <Link className="navigation__profile-btn" to="/profile"><NavigationBtn /></Link>
@@ -46,7 +46,7 @@ function Navigation(props) {
     const navigation = props.loggedIn ? navigationHeaderLanding : navigationHeader;
 
     return(
-        <nav className={pathname !== "/" ? "navigation" : "navigation-landing"}>
+        <nav className={pathname !== "/" ? "navigation" : "navigation-landing"} id="navigation-menu">
             {navigation}
             <BurgerBtn onClick={handleBurgerBtnClick} />
             <BurgerMenu

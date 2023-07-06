@@ -1,4 +1,5 @@
 import React from "react";
+import './Login.css';
 import ComponentWithForm from '../ComponentWithForm/ComponentWithForm';
 
 function Login() {
@@ -11,10 +12,10 @@ function Login() {
                 path="/signup"
                 textPath="Регистрация"
             >
-                <label className="section-with-form__input-field">
-                    <span className="section-with-form__input-title">E-mail</span>
+                <label className="login__input-field">
+                    <span className="login__input-title">E-mail</span>
                     <input
-                    className="section-with-form__input"
+                    className="login__input"
                     type="email"
                     name="email"
                     id="emailAddress"
@@ -23,12 +24,12 @@ function Login() {
                     minLength={4}
                     maxLength={30}
                     />
-                    <span className="section-with-form__error-visible"></span>
+                    <span className="login__error-visible"></span>
                 </label>
-                <label className="section-with-form__input-field">
-                    <span className="section-with-form__input-title">Пароль</span>
+                <label className="login__input-field">
+                    <span className="login__input-title">Пароль</span>
                     <input
-                    className="section-with-form__input"
+                    className="login__input"
                     type="password"
                     name="password"
                     id="userPassword"
@@ -37,7 +38,7 @@ function Login() {
                     minLength={2}
                     maxLength={200}
                     />
-                    <span className="section-with-form__error-visible"></span>
+                    <span className="login__error-visible"></span>
                 </label>
             </ComponentWithForm>
         </main>

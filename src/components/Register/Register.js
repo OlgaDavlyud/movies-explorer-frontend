@@ -1,4 +1,5 @@
 import React from "react";
+import './Register.css';
 import ComponentWithForm from "../ComponentWithForm/ComponentWithForm";
 
 function Register() {
@@ -11,24 +12,24 @@ function Register() {
                 path="/signin"
                 textPath="Войти"
                 >
-                    <label className="section-with-form__input-field">
-                        <span className="section-with-form__input-title">Имя</span>
+                    <label className="register__input-field">
+                        <span className="register__input-title">Имя</span>
                         <input
-                        className="section-with-form__input"
+                        className="register__input"
                         type="text"
                         name="name"
                         id="profile-name"
-                        placeholder="Иван"
+                        placeholder="Виталий"
                         required
                         minLength={2}
                         maxLength={40}
                         />
-                        <span className="section-with-form__error-visible"></span>
+                        <span className="register__error-visible"></span>
                     </label>
-                    <label className="section-with-form__input-field">
-                        <span className="section-with-form__input-title">E-mail</span>
+                    <label className="register__input-field">
+                        <span className="register__input-title">E-mail</span>
                         <input
-                        className="section-with-form__input"
+                        className="register__input"
                         type="email"
                         name="email"
                         id="emailAddress"
@@ -37,12 +38,12 @@ function Register() {
                         minLength={4}
                         maxLength={30}
                         />
-                        <span className="section-with-form__error-visible"></span>
+                        <span className="register__error-visible"></span>
                     </label>
-                    <label className="section-with-form__input-field">
-                        <span className="section-with-form__input-title">Пароль</span>
+                    <label className="register__input-field">
+                        <span className="register__input-title">Пароль</span>
                         <input
-                        className="section-with-form__input"
+                        className="register__input"
                         type="password"
                         name="password"
                         id="userPassword"
@@ -51,7 +52,7 @@ function Register() {
                         minLength={2}
                         maxLength={200}
                         />
-                        <span className="section-with-form__error-visible">Что-то пошло не так...</span>
+                        <span className="register__error-visible">Что-то пошло не так...</span>
                     </label>
                 </ComponentWithForm>
             </main>

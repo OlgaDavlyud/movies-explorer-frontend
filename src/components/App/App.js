@@ -22,8 +22,8 @@ function App() {
         <Route path="/saved-movies" element={<SavedMovies />}/>
         <Route path="/profile" element={
           <Profile
-          name="Ольга"
-          email="student@ya.ru"
+          name="Виталий"
+          email="pochta@yandex.ru"
           >
           </Profile>}/>
         <Route path="/signin" element={<Login />}/>

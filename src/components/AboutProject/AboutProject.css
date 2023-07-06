@@ -115,6 +115,24 @@
     }
 }
 
+@media screen and (max-width: 989px) {
+    .about-project__timeline-back {
+        padding-left: 20x;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .about-project__timeline-front {
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .about-project__timeline-caption {
+        margin-left: 7px;
+    }
+}
+
 @media screen and (max-width: 555px) {
     .about-project {
         padding: 68px 18px;
@@ -130,10 +148,10 @@
 
 @media screen and (max-width: 555px) {
     .about-project-grid-table {
-        margin: 25px 0 60px;
-        padding-top: 60px;
+        margin: 26px 0 60px;
+        padding-top: 62px;
         grid-template-columns: 1fr;
-        gap: 56px;
+        gap: 58px;
     }
 }
 
@@ -169,7 +187,7 @@
 @media screen and (max-width: 555px) {
     .about-project__timeline-front {
         font-size: 11px;
-        margin-left: 6px;
+        margin-left: 0;
     }
 }
 

@@ -8,8 +8,7 @@
 }
 
 .section-with-form__title {
-    padding: 36px 0;
-    margin: 0;
+    margin: 40px 0 36px;
     font-family: 'Inter', 'Arial', sans-serif;
     font-size: 24px;
     font-style: normal;
@@ -27,60 +26,12 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
     margin-bottom: 65px;
 }
 
-.section-with-form__input-title {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 4px;
-    font-family: 'Inter', 'Arial', sans-serif;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #8B8B8B;
-}
-
-.section-with-form__input {
-    width: 100%;
-    margin-top: 5px;
-    padding: 0 0 10px;
-    font-family: 'Inter', 'Arial', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #FFF;
-    background: #202020;
-    border-bottom: 1px solid #424242;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-}
-
-.section-with-form__input:focus {
-    outline: 1px solid #424242;
-}
-
-.section-with-form__error-visible {
-    margin-top: 6px;
-    margin-bottom: 24px;
-    font-family: 'Inter', 'Arial', sans-serif;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #EE3465;
-}
-
-.section-with-form__error-visible:last-child {
-    margin-bottom: 0;
-}
-
 .section-with-form__btn {
-    margin-bottom: 16px;
+    margin: 0 auto 16px;
     width: 396px;
     height: 45px;
     border-radius: 3px;
@@ -102,7 +53,7 @@
 }
 
 .section-with-form__btn-signin {
-    margin-top: 155px;
+    margin-top: 150px;
 }
 
 .section-with-form__btn:hover {
@@ -156,15 +107,8 @@
 
 @media screen and (max-width: 420px) {
     .section-with-form__title {
-        padding-top: 45px;
-        padding-bottom: 76px;
+        margin: 51px 0 75px;
         text-align: center;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .section-with-form__input {
-        width: 260px;
     }
 }
 
@@ -184,12 +128,12 @@
 
 @media screen and (max-width: 420px) {
     .section-with-form__btn-signin {
-        margin-top: 245px;
+        margin-top: 238px;
     }
 }
 
 @media screen and (max-width: 420px) {
-    .ssection-with-form__question {
+    .section-with-form__question {
         font-size: 12px;
     }
 }
