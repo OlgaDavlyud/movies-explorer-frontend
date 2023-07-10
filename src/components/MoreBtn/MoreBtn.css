@@ -1,0 +1,45 @@
+.more {
+    display: flex;
+    align-items: center;
+}
+
+.more-hidden {
+    display: none;
+}
+
+.more__btn {
+    width: 320px;
+    height: 36px;
+    margin: 50px auto 80px;
+    padding: 0;
+    background: #202020;
+    border: 1px solid #424242;
+    border-radius: 3px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.more__btn-hidden {
+    display: none;
+}
+
+.more__btn:hover {
+    opacity: 0.7;
+}
+
+.more__btn-text {
+    font-family: 'Inter', 'Arial', sans-serif;
+    color: #FFF;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .more__btn {
+        width: 240px;
+    }
+}

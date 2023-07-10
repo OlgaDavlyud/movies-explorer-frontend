@@ -1,0 +1,112 @@
+.card-movie {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 270px;
+    background: #222222;
+    border-radius: 6px;
+}
+
+.card-movie__link {
+    text-decoration: none;
+}
+
+.card-movie__img {
+    width: 270px;
+    height: 151px;
+}
+
+.card-movie__element {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.card-movie__title {
+    margin: 0;
+    font-family: 'Inter', 'Arial', sans-serif;
+    color: #FFF;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-movie__button-save {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    background: #313131;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.card-movie__button-save:hover {
+    opacity: 0.7;
+}
+
+.card-movie__button-save:active {
+    background: #3DDC84;
+}
+
+.card-movie__button-delete {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: none;
+    background: #222222;
+    background-image: url(../../images/delete-btn.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.card-movie__button-delete:hover {
+    opacity: 0.7;
+}
+
+.card-movie__time {
+    font-family: 'Inter', 'Arial', sans-serif;
+    color: #8B8B8B;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 12px;
+    padding-bottom: 14px;;
+}
+
+@media screen and (max-width: 989px) {
+    .card-movie {
+        max-width: 339px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .card-movie__img {
+        width: 339px;
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card-movie {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card-movie__img {
+        width: 300px;
+        height: 168px;
+    }
+}

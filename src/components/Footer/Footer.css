@@ -1,0 +1,119 @@
+.footer {
+    padding-top: 80px;
+}
+
+.footer__text {
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 13px;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+.footer__signature {
+    max-width: 320px;
+    margin: 0px auto 18px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 13px;
+    text-align: center;
+    color: #8B8B8B;
+}
+
+.footer__container {
+    margin: 0 70px 20px;
+    padding-top: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #424242;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+
+}
+
+.footer__link {
+    text-decoration: none;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.footer__link:hover {
+    opacity: 0.7;
+}
+
+.footer__date {
+    margin: 0;
+}
+
+@media screen and (max-width: 989px) {
+    .footer  {
+        padding-top: 78px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .footer__container  {
+        margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .footer  {
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        padding-top: 79px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .footer__text  {
+        font-size: 12px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .footer__signature {
+        max-width: 300px;
+        margin-bottom: 21px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .footer__container {
+        max-width: 300px;
+        margin: 20px auto;
+        padding-top: 27px;
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .footer__links {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .footer__date {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+}

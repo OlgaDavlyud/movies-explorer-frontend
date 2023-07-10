@@ -1,0 +1,200 @@
+.about-project {
+    padding: 110px 70px;
+}
+
+.about-project__section-title {
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.about-project-grid-table {
+    border-top: 1px solid #DADADA;
+    margin: 23px 0 110px;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+}
+
+.about-project-grid-table__heading {
+    margin: 0;
+    padding-top: 70px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: -0.8px;
+    color: #FFFFFF;
+}
+
+.about-project-grid-table__text {
+    margin-top: 26px;
+    margin-bottom: 0;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.about-project__timeline {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.about-project__timeline-back {
+    background: #3DDC84;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    padding: 9px 14px;
+}
+
+.about-project__timeline-front {
+    background: #303030;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 9px 14px;
+}
+
+.about-project__timeline-caption {
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #8B8B8B;
+    margin-top: 14px;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 989px) {
+    .about-project {
+        padding: 90px 50px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .about-project-grid-table {
+        margin-bottom: 93px;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .about-project__section-title {
+        letter-spacing: -0.88px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .about-project-grid-table__text {
+        margin-top: 22px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .about-project__timeline-back {
+        padding-left: 20x;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .about-project__timeline-front {
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .about-project__timeline-caption {
+        margin-left: 7px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about-project {
+        padding: 68px 18px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about-project__section-title {
+        font-size: 18px;
+        letter-spacing: -0.72px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about-project-grid-table {
+        margin: 26px 0 60px;
+        padding-top: 62px;
+        grid-template-columns: 1fr;
+        gap: 58px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about-project-grid-table__heading {
+        padding: 0;
+        font-size: 18px;
+        letter-spacing: -0.72px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about-project-grid-table__text {
+        margin-top: 16px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about-project__timeline {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about-project__timeline-back {
+        font-size: 11px;
+        margin-left: 6px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about-project__timeline-front {
+        font-size: 11px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about-project__timeline-caption {
+        font-size: 11px;
+        margin-top: 6px;
+        margin-left: 6px;
+    }
+}
