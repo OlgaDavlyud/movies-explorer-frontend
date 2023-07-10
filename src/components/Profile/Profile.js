@@ -48,7 +48,7 @@ function Profile(props) {
                         </label>
                     </div>
                     <button className="profile__button profile__button-edit" type="button" onClick={editProfile}>Редактировать</button>
-                    <button className="profile__btn-save profile__btn-save-hidden" type="button">Сохранить</button>
+                    <button className="profile__btn-save profile__btn-save-hidden" type="submit">Сохранить</button>
                 </form>
                 <Link className="profile__button-exit" to="/">
                     <button className="profile__button profile__button-exit" type="button">Выйти из аккаунта</button>
