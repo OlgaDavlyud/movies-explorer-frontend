@@ -1,13 +1,12 @@
 import { React, useState } from "react";
 import './Navigation.css';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import NavigationBtn from "../NavigationBtn/NavigationBtn";
 import LoginBtn from "../LoginBtn/LoginBtn";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 function Navigation(props) {
-    let { pathname } = useLocation();
     const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
     function handleBurgerBtnClick() {
@@ -43,10 +42,10 @@ function Navigation(props) {
         </>
     )
 
-    const navigation = props.loggedIn ? navigationHeaderLanding : navigationHeader;
+    const navigation = props.loggedIn ? navigationHeader : navigationHeaderLanding;
 
     return(
-        <nav className={pathname !== "/" ? "navigation" : "navigation-landing"} id="navigation-menu">
+        <nav className={props.loggedIn ? "navigation" : "navigation-landing"} id="navigation-menu">
             {navigation}
             <BurgerBtn onClick={handleBurgerBtnClick} />
             <BurgerMenu

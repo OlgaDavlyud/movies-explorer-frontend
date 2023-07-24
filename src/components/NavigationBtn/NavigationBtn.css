@@ -13,6 +13,10 @@
     cursor: pointer;
 }
 
+.profile-btn-landing {
+    background: #073042;
+}
+
 .profile-btn:hover {
     opacity: 0.7;
 }

@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import './Register.css';
 import ComponentWithForm from "../ComponentWithForm/ComponentWithForm";
 
-function Register() {
+function Register({onRegister}) {
+    const [formValue, setFormValue] = useState({name:'', email:'', password:''})
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+
+        setFormValue({
+            ...formValue,
+            [name]: value
+        });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { name, email, password } = formValue;
+        onRegister(name, email, password);
+        setFormValue({ name:'', email: '', password: '' });
+    }
+
         return(
             <main className="register">
                 <ComponentWithForm
@@ -11,6 +29,7 @@ function Register() {
                 question="Уже зарегистрированы?"
                 path="/signin"
                 textPath="Войти"
+                onSubmit={handleSubmit}
                 >
                     <label className="register__input-field">
                         <span className="register__input-title">Имя</span>
@@ -18,11 +37,13 @@ function Register() {
                         className="register__input"
                         type="text"
                         name="name"
-                        id="profile-name"
+                        id="profileName"
                         placeholder="Виталий"
                         required
                         minLength={2}
                         maxLength={40}
+                        value={formValue.name}
+                        onChange={handleChange}
                         />
                         <span className="register__error-visible"></span>
                     </label>
@@ -37,6 +58,8 @@ function Register() {
                         required
                         minLength={4}
                         maxLength={30}
+                        value={formValue.email}
+                        onChange={handleChange}
                         />
                         <span className="register__error-visible"></span>
                     </label>
@@ -51,8 +74,10 @@ function Register() {
                         required
                         minLength={2}
                         maxLength={200}
+                        value={formValue.password}
+                        onChange={handleChange}
                         />
-                        <span className="register__error-visible">Что-то пошло не так...</span>
+                        <span className="register__error-visible"></span>
                     </label>
                 </ComponentWithForm>
             </main>

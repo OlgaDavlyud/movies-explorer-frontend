@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+.burger-btn-landing {
+    background-color: #073042;
+}
+
 .burger-btn:hover {
     opacity: 0.7;
 }

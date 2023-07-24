@@ -1,7 +1,7 @@
 .card-movie {
     box-sizing: border-box;
     margin: 0 auto;
-    max-width: 270px;
+    width: 270px;
     background: #222222;
     border-radius: 6px;
 }
@@ -13,6 +13,7 @@
 .card-movie__img {
     width: 270px;
     height: 151px;
+    object-fit: cover;
 }
 
 .card-movie__element {
@@ -87,7 +88,7 @@
 
 @media screen and (max-width: 989px) {
     .card-movie {
-        max-width: 339px;
+        width: 339px;
     }
 }
 
@@ -100,7 +101,7 @@
 
 @media screen and (max-width: 767px) {
     .card-movie {
-        max-width: 300px;
+        width: 300px;
     }
 }
 

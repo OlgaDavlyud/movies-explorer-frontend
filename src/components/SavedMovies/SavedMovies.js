@@ -2,15 +2,14 @@ import React from 'react';
 import './SavedMovies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import MoreBtn from '../MoreBtn/MoreBtn';
-import { savedMoviesList } from '../../utils/constants';
 
-function SavedMovies() {
+function SavedMovies({movies, onCardDelite}) {
     return(
         <main className='saved-movie'>
             <SearchForm />
-            <MoviesCardList movies={savedMoviesList} />
-            <MoreBtn />
+            <MoviesCardList
+                movies={movies}
+                onCardDelite={onCardDelite} />
             <div className='decoration-block'></div>
         </main>
     );

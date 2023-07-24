@@ -32,10 +32,12 @@
     font-size: 18px;
     font-weight: 400;
     color: #FFF;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .search-form__input:focus {
-    outline: 1px solid #424242;
+    outline: 1px solid #3DDC84;
 }
 
 .search-form__btn {
