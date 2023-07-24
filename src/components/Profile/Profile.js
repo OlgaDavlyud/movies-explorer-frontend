@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './Profile.css';
 import { Link } from 'react-router-dom';
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function Profile(props) {
     const currentUser = useContext(CurrentUserContext);
-    const [formValue, setFormValue] = useState({name:'', email:''})
+    const [formValue, setFormValue] = useState({name:currentUser.name, email:currentUser.email})
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -18,17 +18,17 @@ function Profile(props) {
 
     function activeEditProfile() {
         const inputName = document.getElementById('nameProfile');
-        const inputEmail = document.getElementById('emailProfile');
         inputName.disabled = false;
-        inputEmail.disabled = false;
         inputName.focus();
+        props.setIsEditData(true);
     }
 
     function handleSubmitData(evt){
         evt.preventDefault();
+        console.log(0)
         const { name, email } = formValue;
-        props.onUpdateUser(name, email);
-        setFormValue({ name:'', email: '' });
+        props.setIsEditData(false);
+        props.onUpdateUser({name, email});
     }
 
     function handleOnSignOut(evt) {
@@ -40,7 +40,7 @@ function Profile(props) {
         <main className="profile">
             <section className="profile__section">
                 <h1 className="profile__title">Привет, {currentUser.name}!</h1>
-                <form className="profile__form" onUpdateUser={props.onUpdateUser}>
+                <form className="profile__form" onSubmit={handleSubmitData}>
                     <div className="profile__container">
                         <label className="profile__name">
                             <span className="profile__input-title">Имя</span>
@@ -50,10 +50,10 @@ function Profile(props) {
                                 name="name"
                                 id="nameProfile"
                                 placeholder={currentUser.name}
-                                value={currentUser.name}
+                                value={formValue.name}
                                 minLength={2}
                                 maxLength={200}
-                                disabled
+                                disabled={!props.isEditData}
                                 onChange={handleChange}
                             />
                         </label>
@@ -65,10 +65,10 @@ function Profile(props) {
                                 name="email"
                                 id="emailProfile"
                                 placeholder={currentUser.email}
-                                value={currentUser.email}
+                                value={formValue.email}
                                 minLength={4}
                                 maxLength={30}
-                                disabled
+                                disabled={!props.isEditData}
                                 onChange={handleChange}
                             />
                         </label>
@@ -76,11 +76,10 @@ function Profile(props) {
                     <button className={props.isEditData ? "profile__button profile__button-edit profile__button-edit-hidden" : "profile__button profile__button-edit"}
                     type="button"
                     onClick={activeEditProfile}
-                    onUpdateUser={props.onUpdateUser}
                     >Редактировать</button>
                     <button className={props.isEditData ? "profile__btn-save" : "profile__btn-save profile__btn-save-hidden"}
                     type="submit"
-                    disabled
+                    disabled={!props.isEditData}
                     onClick={handleSubmitData}
                     >Сохранить</button>
                 </form>

@@ -26,6 +26,7 @@ class MainApi {
 
     // Запрос изменения данных пользователя
     changeUserData(data) {
+        console.log(data)
         return fetch (`${this._baseUrl}/users/me`, {
             method: "PATCH",
             headers: {
@@ -53,20 +54,14 @@ class MainApi {
     }
 
     // Запрос добавления фильма в избранные
-    addSavedMovie(data) {
+    addSavedMovie(dataMovie) {
         return fetch (`${this._baseUrl}/movies`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
                 authorization: `Bearer ${localStorage.getItem('token')}`
             },
-            body: JSON.stringify({
-                trailerLink: data.trailerLink,
-                image: data.image.url,
-                description: data.description,
-                nameRU: data.nameRU,
-                duration: data.duration,
-            })
+            body: JSON.stringify(dataMovie)
         })
         .then(this._checkResponse);
     }

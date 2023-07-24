@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import './App.css';
 import '../../index.css'
 import ProtectedRouteElement from "../ProtectedRoute/ProtectedRoute";
@@ -16,37 +16,50 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 import Footer from '../Footer/Footer';
 import InfoTooltip from '../InfoTooltip/InfoTooltip';
 
-import moviesApi from "../../utils/Api/MoviesApi";
 import mainApi from "../../utils/Api/MainApi";
 import * as Auth from "../../utils/Api/Auth";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
-  const [movies, setMovies] = useState([]);
-
   const [loggedIn, setLoggedIn] = useState(false);
   const [isEditData, setIsEditData] = useState(false);
   const [isInfoTooltip, setIsInfoTooltip] = useState(false);
+  const [displaySize, setDisplaySize] = useState(window.innerWidth);
 
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
+// Отображение данных пользователя
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
+
     if (token) {
-      Auth.checkToken(token)
-        .then((res) => {
-          if (res) {
+      mainApi.getInitialUserData(token)
+        .then((user) => {
+          if (user) {
+            const dataUser = {
+              name: user.name,
+              email: user.email
+            }
             setLoggedIn(true);
-            navigate("/movies", { replace: true });
+            setCurrentUser(dataUser);
+            navigate(pathname, { replace: true });
           }
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .catch(err => console.log(err));
     }
   }, [loggedIn]);
 
-    // Функция регистрации
+  useEffect(() => {
+    const handleChangeDisplaySize = (evt) => {
+      setDisplaySize(evt.target.innerWidth)
+    }
+    window.addEventListener('resize', handleChangeDisplaySize)
+    return window.removeEventListener('resize', handleChangeDisplaySize);
+  }, [])
+
+
+  // Функция регистрации
   const handleRegister = (name, email, password) => {
     Auth.register(name, email, password)
       .then((res) => {
@@ -61,7 +74,6 @@ function App() {
 
   // Функция авторизации
   function handleLogin(email, password) {
-    console.log(email, password);
     Auth.login(email, password)
       .then((data) => {
         if (data.token) {
@@ -72,74 +84,6 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }
-
-  // Отображение фильмов сразу, чтоб работать с карточками фильма
-  useEffect(() => {
-    if (loggedIn) {
-      Promise.all([moviesApi.getInitialMovies()])
-      .then(([dataMovies]) => {
-        setMovies(dataMovies);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    }
-  }, [loggedIn]);
-
-  // Отображение данных пользователя
-  useEffect(() => {
-    if (localStorage.getItem('token')) {
-      const token = localStorage.getItem('token');
-
-      if (token) {
-        mainApi.getInitialUserData(token)
-          .then((res) => {
-            if (res) {
-              const dataUser = {
-                name: res.name,
-                email: res.email
-              }
-              setLoggedIn(true);
-              setCurrentUser(dataUser);
-              navigate("/profile", { replace: true });
-            }
-          })
-          .catch(err => console.log(err));
-      }
-    }
-  }, [loggedIn]);
-
-// Отображение пустой страницы без фильмов
-  // useEffect(() =>{
-  //   if (loggedIn) {
-  //   renderWithData();
-  //   }
-  // }, []);
-
-// Нерабочая функция отображения фильмов (нет запроса для отображения)
-  // function renderWithData() {
-  //     Promise.all([moviesApi.getInitialMovies()])
-  //       .then(([dataMovies]) => {
-  //         setMovies(dataMovies);
-  //       })
-  //       .then(([dataMovies]) => {
-  //         setTimeout(() => {
-  //         console.log(dataMovies);
-  //         }, 10000)
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //     });
-  // };
-
-
-  function openInfoTooltip() {
-    setIsInfoTooltip(!isInfoTooltip);
-  }
-
-  function closeInfoTooltip() {
-    setIsInfoTooltip(false);
   }
 
   //Функция сохранения(лайка) фильма
@@ -189,7 +133,7 @@ function App() {
     .changeUserData(data)
     .then((user) => {
       console.log(user)
-      setIsEditData(true);
+      setIsEditData(false);
       setCurrentUser(user);
     })
     .catch((err) => {
@@ -203,6 +147,14 @@ function App() {
     navigate("/", { replace: true });
   }
 
+  function openInfoTooltip() {
+    setIsInfoTooltip(!isInfoTooltip);
+  }
+
+  function closeInfoTooltip() {
+    setIsInfoTooltip(false);
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -214,7 +166,7 @@ function App() {
               element={
                 <ProtectedRouteElement
                   element={Movies}
-                  movies={movies}
+                  displaySize={displaySize}
                   // onCardLike={handleLikeMovie}
                   // onSaveMovie={handleSavedMovie}
                   loggedIn={loggedIn}
@@ -226,7 +178,6 @@ function App() {
               element={
                 <ProtectedRouteElement
                   element={SavedMovies}
-                  movies={movies}
                   //onCardDelite={handleDeleteMovie}
                   loggedIn={loggedIn}
                 />
@@ -238,6 +189,7 @@ function App() {
                 <ProtectedRouteElement
                   element={Profile}
                   isEditData={isEditData}
+                  setIsEditData={setIsEditData}
                   onUpdateUser={handleUpdateUserData}
                   onSignOut={handleSignOut}
                   loggedIn={loggedIn}

@@ -2,11 +2,14 @@
     box-sizing: border-box;
     margin: 0 auto;
     width: 270px;
+    height: 218px;
     background: #222222;
     border-radius: 6px;
 }
 
 .card-movie__link {
+    display: inline-block;
+    height: 151px;
     text-decoration: none;
 }
 
