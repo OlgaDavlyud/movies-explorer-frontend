@@ -2,6 +2,9 @@ import React from "react";
 import './FilterCheckbox.css';
 
 function FilterCheckbox() {
+    // const handleFilterShortMovies = (e) => {
+    //     e.preventDefault();
+    // }
 
     return(
         <div className="filte-checkbox">

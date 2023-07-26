@@ -55,13 +55,15 @@ function App() {
       setDisplaySize(evt.target.innerWidth)
     }
     window.addEventListener('resize', handleChangeDisplaySize)
-    return window.removeEventListener('resize', handleChangeDisplaySize);
+    return() => {window.removeEventListener('resize', handleChangeDisplaySize)};
   }, [])
-
 
   // Функция регистрации
   const handleRegister = (name, email, password) => {
-    Auth.register(name, email, password)
+    Auth.register({name, email, password})
+      .then((res) => {
+        return Auth.login({email, password})
+      })
       .then((res) => {
         setLoggedIn(true);
         setCurrentUser({name, email});
@@ -74,7 +76,7 @@ function App() {
 
   // Функция авторизации
   function handleLogin(email, password) {
-    Auth.login(email, password)
+    Auth.login({email, password})
       .then((data) => {
         if (data.token) {
           setLoggedIn(true);
@@ -102,12 +104,13 @@ function App() {
   //     });
   // };
 
+
   // Функция добавления фильма в избранное
   // const handleSavedMovie = (data) => {
   //   mainApi
   //   .addSavedMovie(data)
   //   .then((newMovie) => {
-  //     setMovies([newMovie, ...movies]);
+  //     // setMovies([newMovie, ...movies]);
   //   })
   //   .catch((err) => {
   //     console.log(err);
@@ -178,7 +181,7 @@ function App() {
               element={
                 <ProtectedRouteElement
                   element={SavedMovies}
-                  //onCardDelite={handleDeleteMovie}
+                  // onCardDelite={handleDeleteMovie}
                   loggedIn={loggedIn}
                 />
               }

@@ -55,7 +55,7 @@
     opacity: 0.7;
 }
 
-.card-movie__button-save:active {
+.card-movie__button-save-active {
     background: #3DDC84;
 }
 

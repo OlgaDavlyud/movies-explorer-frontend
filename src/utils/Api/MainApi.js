@@ -50,7 +50,7 @@ class MainApi {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
         })
-        .then(this._checkResponse);
+        .then(this._checkResponse)
     }
 
     // Запрос добавления фильма в избранные

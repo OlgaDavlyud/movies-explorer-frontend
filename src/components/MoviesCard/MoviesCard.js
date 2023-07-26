@@ -1,13 +1,10 @@
-// import React, { useContext } from "react";
 import './MoviesCard.css';
 import { useLocation } from "react-router-dom";
-// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function MoviesCard({movie, onCardLike, onSaveMovie, onCardDelite}) {
-    // const currentUser = useContext(CurrentUserContext);
+function MoviesCard(props) {
     let { pathname } = useLocation();
 
-    const { trailerLink, image, description, nameRU, duration } = movie;
+    const { trailerLink, image, description, nameRU, duration } = props.movie;
 
     const hours = parseInt((duration / 60).toString());
     const minutes = duration % 60 < 10
@@ -15,30 +12,28 @@ function MoviesCard({movie, onCardLike, onSaveMovie, onCardDelite}) {
         : Math.ceil(duration % 60).toString();
     const durationTime = hours + 'ч' + minutes + 'м';
 
-    // const isLiked = movie.likes.some(i => i._id === currentUser._id);
-    // const movieSaveButtonClassName = (
-    //     `card-movie__button-save ${isLiked && 'card-movie__button-save:active'}`
-    //  );
+    function handleSaveClick() {
+        props.onSaveMovie(props.movie);
+    }
 
-    // function handleSaveClick() {
-    //     onCardLike(movie);
-    //     onSaveMovie(movie);
-    // }
-
-    // function handleDeleteClick() {
-    //     onCardDelite(movie);
-    // }
+    function handleDeleteClick() {
+        if(pathname === "/movies") {
+            props.onDeleteMovie(props.savedMovies.find(i => i.movieId === props.movie.id)._id)
+        } else {
+            props.onDeleteMovie(props.movie._id);
+        }
+    }
 
     return(
-        <li className="card-movie" id={movie.Id}>
+        <li className="card-movie">
             <a className="card-movie__link" href={trailerLink} target="_blank" rel="noopener noreferrer">
-                <img className="card-movie__img" src={"https://api.nomoreparties.co" + image.url} alt={description} />
+                <img className="card-movie__img" src={pathname === '/movies' ? "https://api.nomoreparties.co" + image.url : image} alt={description} />
             </a>
             <div className="card-movie__element">
                 <h2 className="card-movie__title">{nameRU}</h2>
-                <button className={pathname === "/movies" ? "card-movie__button-save" : "card-movie__button-delete"} 
+                <button className={pathname === "/movies" ? props.isSaved ? "card-movie__button-save card-movie__button-save-active" : "card-movie__button-save" : "card-movie__button-delete"}
                 type="button"
-                // onClick={pathname === "/movies" ? {handleSaveClick} : {handleDeleteClick}}
+                onClick={pathname === "/movies" ? props.isSaved ? handleDeleteClick : handleSaveClick : handleDeleteClick}
                 >
                 </button>
             </div>

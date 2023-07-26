@@ -8,30 +8,26 @@ function getResponse(res) {
   return res.json();
 }
 
-export const register = (name, email, password) => {
+export const register = (data) => {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-        name, email, password,
-    })
+    body: JSON.stringify(data)
   })
   .then(getResponse)
 };
 
-export const login = (email, password) => {
+export const login = (data) => {
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
         "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-        email, password
-    })
+    body: JSON.stringify(data)
   })
   .then(getResponse)
   .then((data) => {

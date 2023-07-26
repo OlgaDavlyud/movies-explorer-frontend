@@ -3,10 +3,6 @@
     align-items: center;
 }
 
-.more-hidden {
-    display: none;
-}
-
 .more__btn {
     width: 320px;
     height: 36px;
@@ -17,10 +13,6 @@
     border-radius: 3px;
     transition: opacity 0.3s;
     cursor: pointer;
-}
-
-.more__btn-hidden {
-    display: none;
 }
 
 .more__btn:hover {
