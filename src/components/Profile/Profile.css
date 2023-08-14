@@ -138,6 +138,22 @@
     opacity: 0.800000011920929;
 }
 
+.profile__btn-save-disabled {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+.profile__btn-save-disabled:hover {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    opacity: 0.2;
+}
+
 @media screen and (max-width: 989px) {
     .profile {
         margin-top: 236px;

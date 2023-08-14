@@ -88,48 +88,6 @@ function App() {
       });
   }
 
-  //Функция сохранения(лайка) фильма
-  // const handleLikeMovie = (movie) => {
-  //   const isLiked = movie.likes.some((i) => i._id === currentUser._id);
-
-  //   mainApi
-  //     .changeLikeMoviesStatus(movie._id, !isLiked)
-  //     .than((newMovie) => {
-  //       setMovies((movies) =>
-  //        movies.map((c) => (c._id === movie._id ? newMovie : c))
-  //       );
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-
-  // Функция добавления фильма в избранное
-  // const handleSavedMovie = (data) => {
-  //   mainApi
-  //   .addSavedMovie(data)
-  //   .then((newMovie) => {
-  //     // setMovies([newMovie, ...movies]);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   })
-  // }
-
-   //Функция удаления фильма их сохраненных фильма
-  // const handleDeleteMovie = (movieId) => {
-  //   mainApi
-  //     .deleteSavedMovie(movieId)
-  //     .then((data) => {
-  //       console.log(data);
-  //       setMovies((movies) => movies.filter((c) => c._id!== movieId));
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
   // Функция редактирования данных профиля
   const handleUpdateUserData = (data) => {
     mainApi
@@ -151,7 +109,7 @@ function App() {
   }
 
   function openInfoTooltip() {
-    setIsInfoTooltip(!isInfoTooltip);
+    setIsInfoTooltip(true);
   }
 
   function closeInfoTooltip() {
@@ -170,8 +128,6 @@ function App() {
                 <ProtectedRouteElement
                   element={Movies}
                   displaySize={displaySize}
-                  // onCardLike={handleLikeMovie}
-                  // onSaveMovie={handleSavedMovie}
                   loggedIn={loggedIn}
                 />
               }
@@ -181,7 +137,6 @@ function App() {
               element={
                 <ProtectedRouteElement
                   element={SavedMovies}
-                  // onCardDelite={handleDeleteMovie}
                   loggedIn={loggedIn}
                 />
               }

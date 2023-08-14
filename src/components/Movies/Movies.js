@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import MoreBtn from '../MoreBtn/MoreBtn';
 import { useState } from 'react';
-import Preloader from '../Preloader/Preloader';
+// import Preloader from '../Preloader/Preloader';
 import moviesApi from '../../utils/Api/MoviesApi';
 import { filterMovies } from '../../utils/functions/filterMovies';
 import { filterShortMovies } from '../../utils/functions/filterShortMovies';
@@ -96,14 +96,22 @@ function Movies(props) {
             nameRU: dataMovies.nameRU,
             nameEN: dataMovies.nameEN,
         })
-        .catch((err) =>{
-            console.log(err);
+        .then((savedMovie) => {
+            setSavedMovies(previewSavedMovie => {
+                return[...previewSavedMovie, savedMovie];
+            });
         })
+        .catch(err => console.log(err))
     }
 
     function handleDeleteMovie(movieId) {
         mainApi
         .deleteSavedMovie(movieId)
+        .then((res) => {
+            console.log(res)
+            setSavedMovies((savedMovies) => savedMovies.filter((c) => c._id !== movieId));
+        })
+        .catch(err => console.log(err))
     }
 
     return(

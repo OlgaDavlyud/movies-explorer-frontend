@@ -4,7 +4,7 @@ import SearchForm from '../SearchForm/SearchForm';
 import mainApi from '../../utils/Api/MainApi';
 import SavedMoviesCardList from '../SavedMoviesCardList/SavedMoviesCardList';
 
-function SavedMovies(props) {
+function SavedMovies() {
     const [savedMovies, setSavedMovies] = useState(JSON.parse(localStorage.getItem("saved-movies")) || []);
 
     useEffect(() =>{
@@ -20,6 +20,11 @@ function SavedMovies(props) {
     function handleDeleteMovie(movieId) {
         mainApi
         .deleteSavedMovie(movieId)
+        .then((res) => {
+            console.log(res)
+            setSavedMovies((savedMovies) => savedMovies.filter((c) => c._id !== movieId));
+        })
+        .catch(err => console.log(err))
     }
 
     return(

@@ -66,18 +66,6 @@ class MainApi {
         .then(this._checkResponse);
     }
 
-    // Запрос установки и снятия лайка на фильме
-    changeLikeMoviesStatus(movieId, isLiked) {
-        return fetch (`${this._baseUrl}/movies/${movieId}/`, {
-            method: isLiked ? "PUT" : "DELETE",
-            headers: {
-                'content-type': 'application/json',
-                authorization: `Bearer ${localStorage.getItem('token')}`
-            }
-        })
-        .then(this._checkResponse);
-    }
-
     // Запрос удаления фильма из избранного
     deleteSavedMovie(movieId) {
         return fetch (`${this._baseUrl}/movies/${movieId}`, {
