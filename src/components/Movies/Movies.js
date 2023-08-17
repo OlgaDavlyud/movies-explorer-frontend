@@ -9,6 +9,7 @@ import { DISPLAY_SIZE_1280, DISPLAY_SIZE_988, DISPLAY_SIZE_768, MOVIES_DISPLAYED
 import mainApi from '../../utils/Api/MainApi';
 import Preloader from '../Preloader/Preloader';
 import AllMoviesCardList from '../AllMoviesCardList/AllMoviesCardList';
+import MoviesStringAlert from '../MoviesStringAlert/MoviesStringAlert';
 
 function Movies(props) {
     const [allMovies, setAllMovies] = useState(JSON.parse(localStorage.getItem('all-movies')) || []);
@@ -18,6 +19,8 @@ function Movies(props) {
     const [addedMoviesCount, setAddedMoviesCount] = useState(0);
     const [savedMovies, setSavedMovies] = useState(JSON.parse(localStorage.getItem('saved-movies')) || []);
     const [loadedMovies, setLoadedMovies] = useState(false);
+    const [isMoviesLoading, setIsMoviesLoading] = useState(false);
+    const [stringAlert, setStringAlert] = useState({isVisible: false, message: ""});
 
     const moviesToShowAmount = initialMoviesCount + addedMoviesCount;
 
@@ -38,9 +41,9 @@ function Movies(props) {
     }, [props.displaySize]);
 
     useEffect(() =>{
-        // if(!moviesToRender.length) {
-        //     setLoadedMovies(true);
-        // }
+        if(!moviesToRender.length) {
+            setLoadedMovies(true);
+        }
         moviesApi
         .getInitialMovies()
         .then((dataMovies) => {
@@ -49,15 +52,23 @@ function Movies(props) {
         })
         .catch((err) => {
             console.log(err)
+            setStringAlert({ isVisible: true, message: "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз" })
         })
+        .finally(() => {
+            setLoadedMovies(false)
+            setIsMoviesLoading(true)
+         })
     }, []);
 
     useEffect(() =>{
+        setStringAlert({ isVisible: false, message: "" });
         let moviesList = filteredMovies.slice(0, initialMoviesCount);
-
         setMoviesToRender(moviesList)
+        if (isMoviesLoading && !moviesList.length) {
+            setStringAlert({ isVisible: true, message: "Ничего не найдено" })
+        }
         localStorage.setItem("movies-to-render", JSON.stringify(moviesList));
-    }, [initialMoviesCount, filteredMovies])
+    }, [initialMoviesCount, filteredMovies, isMoviesLoading])
 
     useEffect(() =>{
         mainApi
@@ -66,18 +77,29 @@ function Movies(props) {
             setSavedMovies(dataMovies)
             localStorage.setItem("saved-movies", JSON.stringify(dataMovies))
         })
+        .catch(err => {
+            console.log(err);
+         })
     }, [])
 
-    function getFilterMovies(keyWord, isShortMovies) {
-        let filtredArrayMovies;
+    async function getFilterMovies(keyWord, isShortMovies) {
+        try {
+            let filtredArrayMovies;
 
-        if(isShortMovies) {
-            filtredArrayMovies = (filterShortMovies(filterMovies(allMovies, keyWord)));
-        } else {
-            filtredArrayMovies = (filterMovies(allMovies, keyWord));
+            if(isShortMovies) {
+                filtredArrayMovies = (filterShortMovies(filterMovies(allMovies, keyWord)));
+            } else {
+                filtredArrayMovies = (filterMovies(allMovies, keyWord));
+            }
+            setFilteredMovies(filtredArrayMovies)
+            localStorage.setItem("filtered-movies", JSON.stringify(filtredArrayMovies));
+        } catch (err) {
+            setStringAlert({ isVisible: true, message: "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз" })
         }
-        setFilteredMovies(filtredArrayMovies)
-        localStorage.setItem("filtered-movies", JSON.stringify(filtredArrayMovies));
+        finally {
+            setLoadedMovies(false)
+            setIsMoviesLoading(true)
+        }
     }
 
     function handleShowMoreMovies() {
@@ -120,7 +142,7 @@ function Movies(props) {
     return(
         <main className="movie">
             <SearchForm
-            handleSubmit={getFilterMovies}
+                handleSubmit={getFilterMovies}
             />
             <AllMoviesCardList
                 movies={moviesToRender}
@@ -128,6 +150,7 @@ function Movies(props) {
                 savedMovies={savedMovies}
                 onDeleteMovie={handleDeleteMovie}
             />
+            {stringAlert.isVisible ? <MoviesStringAlert text={stringAlert.message} /> : null}
             {loadedMovies ? <Preloader /> : null}
             {moviesToRender.length !== filteredMovies.length && moviesToRender.length ? <MoreBtn
             onClick={handleShowMoreMovies}
