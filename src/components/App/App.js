@@ -96,6 +96,7 @@ function App() {
       console.log(user)
       setIsEditData(false);
       setCurrentUser(user);
+      openInfoTooltip();
     })
     .catch((err) => {
       console.log(err);
@@ -162,7 +163,7 @@ function App() {
         <InfoTooltip
           isOpen={isInfoTooltip}
           onClose={closeInfoTooltip}
-          textError="Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз"
+          text="Данные успешно изменены"
         />
       </div>
   </CurrentUserContext.Provider>

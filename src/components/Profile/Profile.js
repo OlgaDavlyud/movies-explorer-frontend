@@ -25,7 +25,6 @@ function Profile(props) {
 
     function handleSubmitData(evt){
         evt.preventDefault();
-        console.log(0)
         const { name, email } = formValue;
         props.setIsEditData(false);
         props.onUpdateUser({name, email});
@@ -79,7 +78,7 @@ function Profile(props) {
                     >Редактировать</button>
                     <button className={props.isEditData ? "profile__btn-save" : "profile__btn-save profile__btn-save-hidden"}
                     type="submit"
-                    disabled={!props.isEditData}
+                    disabled={props.isEditData && formValue.name === currentUser.name && formValue.email === currentUser.email}
                     onClick={handleSubmitData}
                     >Сохранить</button>
                 </form>

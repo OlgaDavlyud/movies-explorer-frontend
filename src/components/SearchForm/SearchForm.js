@@ -20,6 +20,17 @@ function SearchForm(props) {
         props.handleSubmit(searchValue.moviesName, searchValue.isShortMovies);
     }
 
+    const handleClickShortMovies = (e) =>{
+        e.preventDefault();
+        if(!searchValue.isShortMovies) {
+            setSearchValue((preview) => ({...preview, isShortMovies: true}))
+            props.handleSubmit(searchValue.moviesName, true)
+        } else {
+            setSearchValue((preview) => ({...preview, isShortMovies: false}))
+            props.handleSubmit(searchValue.moviesName, false)
+        }
+    }
+
     return(
         <section className="search-form">
             <div className="search-form__container">
@@ -35,7 +46,7 @@ function SearchForm(props) {
                     />
                     <button className="search-form__btn" type="submit" value="Поиск" onSubmit={handleSubmitSearchData}></button>
                 </form>
-                <FilterCheckbox />
+                <FilterCheckbox isActiveFilterBtn={searchValue.isShortMovies} onClick={handleClickShortMovies}/>
             </div>
         </section>
     );

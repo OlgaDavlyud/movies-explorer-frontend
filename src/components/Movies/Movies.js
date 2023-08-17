@@ -2,22 +2,22 @@ import React, { useEffect } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import MoreBtn from '../MoreBtn/MoreBtn';
 import { useState } from 'react';
-// import Preloader from '../Preloader/Preloader';
 import moviesApi from '../../utils/Api/MoviesApi';
 import { filterMovies } from '../../utils/functions/filterMovies';
 import { filterShortMovies } from '../../utils/functions/filterShortMovies';
 import { DISPLAY_SIZE_1280, DISPLAY_SIZE_988, DISPLAY_SIZE_768, MOVIES_DISPLAYED_ADDITIONALLY } from '../../utils/constants';
 import mainApi from '../../utils/Api/MainApi';
+import Preloader from '../Preloader/Preloader';
 import AllMoviesCardList from '../AllMoviesCardList/AllMoviesCardList';
 
 function Movies(props) {
     const [allMovies, setAllMovies] = useState(JSON.parse(localStorage.getItem('all-movies')) || []);
     const [filteredMovies, setFilteredMovies] = useState(JSON.parse(localStorage.getItem('filtered-movies')) || []);
-    // const [isPreloaderHidden, setIsPreloaderHidden] = useState(true);
     const [moviesToRender, setMoviesToRender] = useState(JSON.parse(localStorage.getItem('movies-to-render')) || []);
     const [initialMoviesCount, setInitialMoviesCount] = useState(0);
     const [addedMoviesCount, setAddedMoviesCount] = useState(0);
     const [savedMovies, setSavedMovies] = useState(JSON.parse(localStorage.getItem('saved-movies')) || []);
+    const [loadedMovies, setLoadedMovies] = useState(false);
 
     const moviesToShowAmount = initialMoviesCount + addedMoviesCount;
 
@@ -38,6 +38,9 @@ function Movies(props) {
     }, [props.displaySize]);
 
     useEffect(() =>{
+        // if(!moviesToRender.length) {
+        //     setLoadedMovies(true);
+        // }
         moviesApi
         .getInitialMovies()
         .then((dataMovies) => {
@@ -125,10 +128,10 @@ function Movies(props) {
                 savedMovies={savedMovies}
                 onDeleteMovie={handleDeleteMovie}
             />
+            {loadedMovies ? <Preloader /> : null}
             {moviesToRender.length !== filteredMovies.length && moviesToRender.length ? <MoreBtn
             onClick={handleShowMoreMovies}
             /> : null}
-            {/* <Preloader hidden={isPreloaderHidden}/> */}
         </main>
     );
 }

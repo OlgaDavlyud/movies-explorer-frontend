@@ -1,6 +1,6 @@
 import React from "react";
 import './InfoTooltip.css';
-import error from "../../images/error.svg";
+import done from "../../images/done.svg";
 
 function InfoTooltip(props) {
   return (
@@ -14,11 +14,9 @@ function InfoTooltip(props) {
         ></button>
         <div className="popup__info-tooltip-form">
           <div className="popup__info-tooltip-image">
-            <img src={error} alt="Ошибка" />
+            <img src={done} alt="Выполнено" />
           </div>
-          <p className="popup__info-tooltip-text">
-            <span className="popup__info-tooltip-text">{props.textError}</span>
-          </p>
+          <span className="popup__info-tooltip-text">{props.text}</span>
         </div>
       </div>
     </div>
