@@ -83,9 +83,8 @@ function Movies(props) {
     }, [])
 
     async function getFilterMovies(keyWord, isShortMovies) {
+        let filtredArrayMovies;
         try {
-            let filtredArrayMovies;
-
             if(isShortMovies) {
                 filtredArrayMovies = (filterShortMovies(filterMovies(allMovies, keyWord)));
             } else {

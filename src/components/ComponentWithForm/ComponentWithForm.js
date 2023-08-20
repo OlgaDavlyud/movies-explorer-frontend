@@ -10,7 +10,7 @@ function ComponentWithForm(props) {
         <section className="section-with-form">
             <Logo />
             <h1 className="section-with-form__title">{props.title}</h1>
-            <form className="section-with-form__form" onSubmit={props.onSubmit}>
+            <form className="section-with-form__form" onSubmit={props.onSubmit} noValidate>
                 <div className="section-with-form__input-container">
                     {props.children}
                 </div>
@@ -20,6 +20,7 @@ function ComponentWithForm(props) {
                 name="button-submit"
                 value={props.buttonText}
                 onSubmit={props.onSubmit}
+                disabled={props.isSubmitBtnDisabled}
                 >{props.buttonText}</button>
                 <p className="section-with-form__question">{props.question}<Link className="section-with-form__link" to={props.path} >{props.textPath}</Link></p>
             </form>

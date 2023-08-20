@@ -5,23 +5,27 @@ import findIcon from '../../images/find-icon.svg';
 
 function SearchForm(props) {
     const [searchValue, setSearchValue] = useState({moviesName: '', isShortMovies: false});
+    const [checkboxValue, setCheckboxValue] = React.useState(Boolean (Number (localStorage.getItem("shortFilmActive"))) ?? false);
 
     const handleChange = (e) => {
         const {name, value} = e.target;
-
         setSearchValue({
             ...searchValue,
             [name]: value
         });
     }
 
+    const onChange = (v) => {
+        setCheckboxValue (v);
+        localStorage.setItem("shortFilmActive", Number(v));
+    };
+
     const handleSubmitSearchData = (e) => {
         e.preventDefault();
         props.handleSubmit(searchValue.moviesName, searchValue.isShortMovies);
     }
 
-    const handleClickShortMovies = (e) =>{
-        e.preventDefault();
+    const handleClickShortMovies = () =>{
         if(!searchValue.isShortMovies) {
             setSearchValue((preview) => ({...preview, isShortMovies: true}))
             props.handleSubmit(searchValue.moviesName, true)
@@ -46,7 +50,10 @@ function SearchForm(props) {
                     />
                     <button className="search-form__btn" type="submit" value="Поиск" onSubmit={handleSubmitSearchData}></button>
                 </form>
-                <FilterCheckbox isActiveFilterBtn={searchValue.isShortMovies} onClick={handleClickShortMovies}/>
+                <FilterCheckbox
+                onClick={handleClickShortMovies}
+                onChange={onChange} value={checkboxValue}
+                />
             </div>
         </section>
     );

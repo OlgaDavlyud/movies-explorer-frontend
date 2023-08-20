@@ -59,14 +59,21 @@ function App() {
   }, [])
 
   // Функция регистрации
-  const handleRegister = (name, email, password) => {
-    Auth.register({name, email, password})
+  const handleRegister = (data) => {
+    Auth.register({
+      name: data.name,
+      email: data.email,
+      password: data.password
+    })
       .then((res) => {
-        return Auth.login({email, password})
+        return Auth.login({
+          email: data.email,
+          password: data.password
+        })
       })
       .then((res) => {
         setLoggedIn(true);
-        setCurrentUser({name, email});
+        setCurrentUser({data});
         navigate("/movies", { replace: true });
       })
       .catch((err) => {
@@ -75,8 +82,11 @@ function App() {
   };
 
   // Функция авторизации
-  function handleLogin(email, password) {
-    Auth.login({email, password})
+  function handleLogin(data) {
+    Auth.login({
+      email: data.email,
+      password: data.password
+    })
       .then((data) => {
         if (data.token) {
           setLoggedIn(true);

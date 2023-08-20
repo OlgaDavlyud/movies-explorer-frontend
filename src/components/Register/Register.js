@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import './Register.css';
 import ComponentWithForm from "../ComponentWithForm/ComponentWithForm";
+import { useInputValidation } from '../../utils/validation';
 
-function Register({onRegister}) {
-    const [formValue, setFormValue] = useState({name:'', email:'', password:''})
+function Register(props) {
+    const name = useInputValidation('', { isEmpty: true, minLength: 2 });
+    const email = useInputValidation('', { isEmpty: true, minLength: 4, isEmail: false });
+    const password = useInputValidation('', { isEmpty: true, minLength: 2, });
+    // const [formValue, setFormValue] = useState({name:'', email:'', password:''})
 
-    const handleChange = (e) => {
-        const {name, value} = e.target;
+    // const handleChange = (e) => {
+    //     const {name, value} = e.target;
 
-        setFormValue({
-            ...formValue,
-            [name]: value
-        });
-    }
+    //     setFormValue({
+    //         ...formValue,
+    //         [name]: value
+    //     });
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { name, email, password } = formValue;
-        onRegister(name, email, password);
-        setFormValue({ name:'', email: '', password: '' });
+        // const { name, email, password } = formValue;
+        props.onRegister({name: name.inputValue, email: email.inputValue, password: password.inputValue});
+        console.log(name, email, password);
+        // setFormValue({ name:'', email: '', password: '' });
     }
 
         return(
@@ -30,6 +35,7 @@ function Register({onRegister}) {
                 path="/signin"
                 textPath="Войти"
                 onSubmit={handleSubmit}
+                isSubmitBtnDisabled={!email.isValid || !password.isValid}
                 >
                     <label className="register__input-field">
                         <span className="register__input-title">Имя</span>
@@ -38,14 +44,15 @@ function Register({onRegister}) {
                         type="text"
                         name="name"
                         id="profileName"
-                        placeholder="Виталий"
+                        placeholder="Ваше имя"
                         required
                         minLength={2}
                         maxLength={40}
-                        value={formValue.name}
-                        onChange={handleChange}
+                        value={name.inputValue}
+                        onChange={name.handleInputChange}
+                        onBlur={name.handleInputBlur}
                         />
-                        <span className="register__error-visible"></span>
+                        {(name.isDirty && name.validationMessage) && <span className="register__error-visible">{name.validationMessage}</span>}
                     </label>
                     <label className="register__input-field">
                         <span className="register__input-title">E-mail</span>
@@ -58,10 +65,11 @@ function Register({onRegister}) {
                         required
                         minLength={4}
                         maxLength={30}
-                        value={formValue.email}
-                        onChange={handleChange}
+                        value={email.inputValue}
+                        onChange={email.handleInputChange}
+                        onBlur={email.handleInputBlur}
                         />
-                        <span className="register__error-visible"></span>
+                        {(email.isDirty && email.validationMessage) && <span className="register__error-visible">{email.validationMessage}</span>}
                     </label>
                     <label className="register__input-field">
                         <span className="register__input-title">Пароль</span>
@@ -74,10 +82,13 @@ function Register({onRegister}) {
                         required
                         minLength={2}
                         maxLength={200}
-                        value={formValue.password}
-                        onChange={handleChange}
+                        value={password.inputValue}
+                        onChange={password.handleInputChange}
+                        // validationMessage={password.validationMessage}
+                        // isDirty={password.isDirty}
+                        onBlur={password.handleInputBlur}
                         />
-                        <span className="register__error-visible"></span>
+                        {(password.isDirty && password.validationMessage) && <span className="register__error-visible">{password.validationMessage}</span>}
                     </label>
                 </ComponentWithForm>
             </main>

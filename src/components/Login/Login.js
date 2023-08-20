@@ -1,27 +1,29 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import './Login.css';
 import ComponentWithForm from '../ComponentWithForm/ComponentWithForm';
+import { useInputValidation } from '../../utils/validation';
 
-function Login({onLogin}) {
-    const [formValue, setFormValue] = useState({email: '', password: ''});
+function Login(props) {
+    const email = useInputValidation('', { isEmpty: true, minLength: 4, isEmail: false });
+    const password = useInputValidation('', { isEmpty: true, minLength: 2, });
+    // const [formValue, setFormValue] = useState({email: '', password: ''});
 
-    const handleChange = (e) => {
-        const {name, value} = e.target;
-
-        setFormValue({
-            ...formValue,
-            [name]: value
-        });
-    }
+    // const handleChange = (e) => {
+    //     const {name, value} = e.target;
+    //     setFormValue({
+    //         ...formValue,
+    //         [name]: value
+    //     });
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { email , password } = formValue;
-        if (!email || !password){
+        // const { email , password } = formValue;
+        if (!email.inputValue || !password.inputValue){
             return;
         }
-        onLogin(email, password);
-        setFormValue({ email: '', password: ''});
+        props.onLogin({email: email.inputValue, password: password.inputValue});
+        // setFormValue({ email: '', password: ''});
     }
 
     return(
@@ -33,6 +35,7 @@ function Login({onLogin}) {
                 path="/signup"
                 textPath="Регистрация"
                 onSubmit={handleSubmit}
+                isSubmitBtnDisabled={!email.isValid || !password.isValid}
             >
                 <label className="login__input-field">
                     <span className="login__input-title">E-mail</span>
@@ -45,9 +48,11 @@ function Login({onLogin}) {
                     required
                     minLength={4}
                     maxLength={30}
-                    onChange={handleChange}
+                    onChange={email.handleInputChange}
+                    value={email.inputValue}
+                    onBlur={email.handleInputBlur}
                     />
-                    <span className="login__error-visible"></span>
+                    {(email.isDirty && email.validationMessage) && <span className="login__error-visible">{email.validationMessage}</span>}
                 </label>
                 <label className="login__input-field">
                     <span className="login__input-title">Пароль</span>
@@ -60,9 +65,11 @@ function Login({onLogin}) {
                     required
                     minLength={2}
                     maxLength={200}
-                    onChange={handleChange}
+                    onChange={password.handleInputChange}
+                    value={password.inputValue}
+                    onBlur={password.handleInputBlur}
                     />
-                    <span className="login__error-visible"></span>
+                    {(password.isDirty && password.validationMessage) && <span className="login__error-visible">{password.validationMessage}</span>}
                 </label>
             </ComponentWithForm>
         </main>
