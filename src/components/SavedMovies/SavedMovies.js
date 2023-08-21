@@ -22,7 +22,6 @@ function SavedMovies() {
         mainApi
         .getInitialSavedMovies()
         .then((dataMovies) =>{
-            console.log(dataMovies)
             setSavedMovies(dataMovies)
             setFilteredMovies(dataMovies)
             localStorage.setItem("saved-movies", JSON.stringify(dataMovies))
@@ -59,7 +58,7 @@ function SavedMovies() {
         .deleteSavedMovie(movieId)
         .then((res) => {
             console.log(res)
-            setSavedMovies((savedMovies) => savedMovies.filter((c) => c._id !== movieId));
+            setSavedMovies((savedMovies) => savedMovies.filter((c) => c._id !== movieId))
         })
         .catch(err => console.log(err))
     }
@@ -71,7 +70,6 @@ function SavedMovies() {
             <SavedMoviesCardList
                 movies={filteredMovies}
                 onDeleteMovie={handleDeleteMovie} />
-            <div className='decoration-block'></div>
             {stringAlert.isVisible ? <MoviesStringAlert text={stringAlert.message} /> : null}
             {loadedMovies ? <Preloader /> : null}
         </main>

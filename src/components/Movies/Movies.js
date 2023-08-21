@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoreBtn from '../MoreBtn/MoreBtn';
 import { useState } from 'react';

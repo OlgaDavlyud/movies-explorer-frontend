@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './SearchForm.css';
+import { useLocation } from "react-router-dom";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import findIcon from '../../images/find-icon.svg';
 
 function SearchForm(props) {
-    const [searchValue, setSearchValue] = useState({moviesName: '', isShortMovies: false});
-    const [checkboxValue, setCheckboxValue] = React.useState(Boolean (Number (localStorage.getItem("shortFilmActive"))) ?? false);
+    const { pathname } = useLocation();
+    const [searchValue, setSearchValue] = useState(pathname === '/movies' ? JSON.parse(localStorage.getItem('search-value')) ?? {moviesName: '', isShortMovies: false} : {moviesName: '', isShortMovies: false});
+
+    useEffect(() => {
+        setSearchValue(pathname === '/movies' ? JSON.parse(localStorage.getItem('search-value')) ?? {moviesName: '', isShortMovies: false} : {moviesName: '', isShortMovies: false})
+    }, [pathname])
+
+    useEffect(() => {
+        if (pathname === '/movies') {
+            localStorage.setItem("search-value", JSON.stringify(searchValue))
+        }
+    }, [searchValue, pathname])
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -14,11 +25,6 @@ function SearchForm(props) {
             [name]: value
         });
     }
-
-    const onChange = (v) => {
-        setCheckboxValue (v);
-        localStorage.setItem("shortFilmActive", Number(v));
-    };
 
     const handleSubmitSearchData = (e) => {
         e.preventDefault();
@@ -46,13 +52,14 @@ function SearchForm(props) {
                     name="moviesName"
                     placeholder="Фильм"
                     required
+                    value={searchValue.moviesName}
                     onChange={handleChange}
                     />
                     <button className="search-form__btn" type="submit" value="Поиск" onSubmit={handleSubmitSearchData}></button>
                 </form>
                 <FilterCheckbox
                 onClick={handleClickShortMovies}
-                onChange={onChange} value={checkboxValue}
+                isActive={searchValue.isShortMovies}
                 />
             </div>
         </section>

@@ -1,6 +1,7 @@
 .register__input-field {
     display: flex;
     flex-direction: column;
+    height: 67px;
 }
 
 .register__input-title {

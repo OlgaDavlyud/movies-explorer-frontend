@@ -1,7 +1,6 @@
 .movie-card-list {
     max-width: calc(100% - 140px);
     margin: 0 auto;
-    min-height: 55vh;
 }
 
 .movie-card-list__section-cards {
