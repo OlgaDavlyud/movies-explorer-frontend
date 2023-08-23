@@ -57,8 +57,9 @@ function SavedMovies() {
         mainApi
         .deleteSavedMovie(movieId)
         .then((res) => {
-            console.log(res)
-            setSavedMovies((savedMovies) => savedMovies.filter((c) => c._id !== movieId))
+            console.log(res);
+            setSavedMovies((prevSavedMovies) => prevSavedMovies.filter((c) => c._id !== movieId))
+            setFilteredMovies((prevFilteredMovies) => prevFilteredMovies.filter((c) => c._id !== movieId))
         })
         .catch(err => console.log(err))
     }

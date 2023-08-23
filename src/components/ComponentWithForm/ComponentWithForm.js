@@ -6,6 +6,8 @@ import Logo from '../Logo/Logo';
 function ComponentWithForm(props) {
     let { pathname } = useLocation();
 
+    const submitBtnVariation = (pathname !== "/signup" ? "section-with-form__btn section-with-form__btn-signin" : "section-with-form__btn section-with-form__btn-signup");
+
     return(
         <section className="section-with-form">
             <Logo />
@@ -15,7 +17,7 @@ function ComponentWithForm(props) {
                     {props.children}
                 </div>
                 <button
-                className={ pathname !== "/signup" ? "section-with-form__btn section-with-form__btn-signin" : "section-with-form__btn section-with-form__btn-signup" }
+                className={props.isSubmitBtnDisabled && (pathname !== "/signup" ? "section-with-form__btn section-with-form__btn-signin" : "section-with-form__btn section-with-form__btn-signup") ? `${submitBtnVariation} section-with-form__btn-disabled` : `${submitBtnVariation}`}
                 type="submit"
                 name="button-submit"
                 value={props.buttonText}

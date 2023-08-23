@@ -24,6 +24,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isEditData, setIsEditData] = useState(false);
   const [isInfoTooltip, setIsInfoTooltip] = useState(false);
+  const [tooltipMessage, setTooltipMessage] = useState({message: ""})
   const [displaySize, setDisplaySize] = useState(window.innerWidth);
 
   const navigate = useNavigate();
@@ -76,9 +77,15 @@ function App() {
         setCurrentUser({data});
         navigate("/movies", { replace: true });
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(err => {
+        if (err === 409) {
+          openInfoTooltip();
+          setTooltipMessage({message: "Пользователь с таким email уже существует"});
+      } else {
+        openInfoTooltip();
+        setTooltipMessage({message: "Что-то не так. Повторите попытку"});
+      }
+    })
   };
 
   // Функция авторизации
@@ -93,9 +100,16 @@ function App() {
           navigate("/movies", { replace: true });
         }
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(err => {
+        console.log(err)
+      if(err === 401) {
+          openInfoTooltip();
+          setTooltipMessage({message: "Неправильный логин или пароль"});
+      } else {
+        openInfoTooltip();
+        setTooltipMessage({message: "Что-то не так. Повторите попытку"});
+      }
+    })
   }
 
   // Функция редактирования данных профиля
@@ -107,10 +121,17 @@ function App() {
       setIsEditData(false);
       setCurrentUser(user);
       openInfoTooltip();
+      setTooltipMessage({message: "Данные успешно изменены"});
     })
     .catch((err) => {
-      console.log(err);
-    });
+      if (err === 409) {
+        openInfoTooltip();
+        setTooltipMessage({message: "Пользователь с таким email уже существует"});
+      } else {
+        openInfoTooltip();
+        setTooltipMessage({message: "Что-то не так. Повторите попытку"});
+      }
+    })
   }
 
   function handleSignOut() {
@@ -173,8 +194,8 @@ function App() {
         <InfoTooltip
           isOpen={isInfoTooltip}
           onClose={closeInfoTooltip}
-          text="Данные успешно изменены"
-        />
+          text={tooltipMessage.message}
+          />
       </div>
   </CurrentUserContext.Provider>
   );

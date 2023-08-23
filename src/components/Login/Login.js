@@ -6,24 +6,13 @@ import { useInputValidation } from '../../utils/validation';
 function Login(props) {
     const email = useInputValidation('', { isEmpty: true, minLength: 4, isEmail: false });
     const password = useInputValidation('', { isEmpty: true, minLength: 2, });
-    // const [formValue, setFormValue] = useState({email: '', password: ''});
-
-    // const handleChange = (e) => {
-    //     const {name, value} = e.target;
-    //     setFormValue({
-    //         ...formValue,
-    //         [name]: value
-    //     });
-    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const { email , password } = formValue;
         if (!email.inputValue || !password.inputValue){
             return;
         }
         props.onLogin({email: email.inputValue, password: password.inputValue});
-        // setFormValue({ email: '', password: ''});
     }
 
     return(
