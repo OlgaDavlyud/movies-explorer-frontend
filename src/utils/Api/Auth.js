@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.damovies-explorer.nomoredomains.rocks';
 
 function getResponse(res) {
   console.log(res);
@@ -38,19 +38,3 @@ export const login = (data) => {
     }
   })
 };
-
-// export const checkToken = (token) => {
-//   return fetch(`${BASE_URL}/users/me`, {
-//     method: 'GET',
-//     headers: {
-//       'Accept': 'application/json',
-//       "Content-Type": "application/json",
-//       "Authorization" : `Bearer ${token}`
-//     }
-//   })
-//   .then(getResponse)
-//   .then((data) => {
-//     console.log(data)
-//     return data
-//   })
-// }
