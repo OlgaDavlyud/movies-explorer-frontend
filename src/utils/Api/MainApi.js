@@ -80,7 +80,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'https://api.damovies-explorer.nomoredomains.rocks',
   });
 
 export default mainApi;
