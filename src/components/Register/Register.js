@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import './Register.css';
 import ComponentWithForm from "../ComponentWithForm/ComponentWithForm";
 import { useInputValidation } from '../../utils/validation';
@@ -7,25 +6,11 @@ function Register(props) {
     const name = useInputValidation('', { isEmpty: true, minLength: 2 });
     const email = useInputValidation('', { isEmpty: true, minLength: 4, isEmail: false });
     const password = useInputValidation('', { isEmpty: true, minLength: 2, });
-    // const [formValue, setFormValue] = useState({name:'', email:'', password:''})
-
-    // const handleChange = (e) => {
-    //     const {name, value} = e.target;
-
-    //     setFormValue({
-    //         ...formValue,
-    //         [name]: value
-    //     });
-    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const { name, email, password } = formValue;
         props.onRegister({name: name.inputValue, email: email.inputValue, password: password.inputValue});
-        console.log(name, email, password);
-        // setFormValue({ name:'', email: '', password: '' });
     }
-
         return(
             <main className="register">
                 <ComponentWithForm
@@ -84,8 +69,6 @@ function Register(props) {
                         maxLength={200}
                         value={password.inputValue}
                         onChange={password.handleInputChange}
-                        // validationMessage={password.validationMessage}
-                        // isDirty={password.isDirty}
                         onBlur={password.handleInputBlur}
                         />
                         {(password.isDirty && password.validationMessage) && <span className="register__error-visible">{password.validationMessage}</span>}
