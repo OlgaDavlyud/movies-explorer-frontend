@@ -59,13 +59,20 @@
 
 @media screen and (max-width: 989px) {
     .footer  {
-        padding-top: 78px;
+        padding-top: 59px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .footer__signature {
+        margin-bottom: 21px;
     }
 }
 
 @media screen and (max-width: 989px) {
     .footer__container  {
         margin: 0 30px;
+        padding-top: 20px;
     }
 }
 

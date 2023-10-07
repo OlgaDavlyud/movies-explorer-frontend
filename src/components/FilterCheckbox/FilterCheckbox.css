@@ -1,4 +1,4 @@
-.filte-checkbox {
+.filter-checkbox {
 	max-height: 72px;
 	margin-top: 70px;
 	border: none;
@@ -78,7 +78,7 @@
     background: #FFF;
 }
 
-.filte-checkbox__text {
+.filter-checkbox__text {
 	margin: 0;
     font-family: 'Inter', 'Arial', sans-serif;
     font-size: 13px;
@@ -89,7 +89,7 @@
 }
 
 @media screen and (max-width: 989px) {
-    .filte-checkbox{
+    .filter-checkbox{
         margin-top: 80px;
     }
 }
@@ -103,7 +103,7 @@
 }
 
 @media screen and (max-width: 630px) {
-	.filte-checkbox {
+	.filter-checkbox {
 		margin-top: 35px;
 		margin-bottom: 34px;
 	}
@@ -121,7 +121,7 @@
 }
 
 @media screen and (max-width: 630px) {
-	.filte-checkbox__text {
+	.filter-checkbox__text {
 		font-size: 11px;
 	}
 }

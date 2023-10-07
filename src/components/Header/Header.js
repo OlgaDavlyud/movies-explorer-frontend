@@ -14,13 +14,13 @@ function Header(props) {
     return(
         <>
             { visible && (
-                <header className={ isRoot ? "header" : "header header-dark"}>
+                <header className={ isRoot ? "header header-authorised" : "header header-dark"}>
                     <Logo />
                     <Routes>
-                        <Route path="/" element={<Navigation loggedIn="false" />} />
-                        <Route path="/movies" element={<Navigation loggedIn={ props.loggedIn } />} />
-                        <Route path="/saved-movies" element={ <Navigation loggedIn={ props.loggedIn } /> }></Route>
-                        <Route path="/profile" element={ <Navigation loggedIn={ props.loggedIn } /> }></Route>
+                        <Route path="/" element={<Navigation loggedIn={props.loggedIn} />} />
+                        <Route path="/movies" element={<Navigation loggedIn={props.loggedIn} />} />
+                        <Route path="/saved-movies" element={ <Navigation loggedIn={props.loggedIn} /> }></Route>
+                        <Route path="/profile" element={ <Navigation loggedIn={props.loggedIn} /> }></Route>
                     </Routes>
                 </header>
             )}

@@ -1,8 +1,16 @@
-import React from "react";
 import './Register.css';
 import ComponentWithForm from "../ComponentWithForm/ComponentWithForm";
+import { useInputValidation } from '../../utils/validation';
 
-function Register() {
+function Register(props) {
+    const name = useInputValidation('', { isEmpty: true, minLength: 2 });
+    const email = useInputValidation('', { isEmpty: true, minLength: 4, isEmail: false });
+    const password = useInputValidation('', { isEmpty: true, minLength: 2, });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.onRegister({name: name.inputValue, email: email.inputValue, password: password.inputValue});
+    }
         return(
             <main className="register">
                 <ComponentWithForm
@@ -11,6 +19,8 @@ function Register() {
                 question="Уже зарегистрированы?"
                 path="/signin"
                 textPath="Войти"
+                onSubmit={handleSubmit}
+                isSubmitBtnDisabled={!email.isValid || !password.isValid}
                 >
                     <label className="register__input-field">
                         <span className="register__input-title">Имя</span>
@@ -18,13 +28,16 @@ function Register() {
                         className="register__input"
                         type="text"
                         name="name"
-                        id="profile-name"
-                        placeholder="Виталий"
+                        id="profileName"
+                        placeholder="Ваше имя"
                         required
                         minLength={2}
                         maxLength={40}
+                        value={name.inputValue}
+                        onChange={name.handleInputChange}
+                        onBlur={name.handleInputBlur}
                         />
-                        <span className="register__error-visible"></span>
+                        {(name.isDirty && name.validationMessage) && <span className="register__error-visible">{name.validationMessage}</span>}
                     </label>
                     <label className="register__input-field">
                         <span className="register__input-title">E-mail</span>
@@ -37,8 +50,11 @@ function Register() {
                         required
                         minLength={4}
                         maxLength={30}
+                        value={email.inputValue}
+                        onChange={email.handleInputChange}
+                        onBlur={email.handleInputBlur}
                         />
-                        <span className="register__error-visible"></span>
+                        {(email.isDirty && email.validationMessage) && <span className="register__error-visible">{email.validationMessage}</span>}
                     </label>
                     <label className="register__input-field">
                         <span className="register__input-title">Пароль</span>
@@ -51,8 +67,11 @@ function Register() {
                         required
                         minLength={2}
                         maxLength={200}
+                        value={password.inputValue}
+                        onChange={password.handleInputChange}
+                        onBlur={password.handleInputBlur}
                         />
-                        <span className="register__error-visible">Что-то пошло не так...</span>
+                        {(password.isDirty && password.validationMessage) && <span className="register__error-visible">{password.validationMessage}</span>}
                     </label>
                 </ComponentWithForm>
             </main>
