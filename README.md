@@ -16,5 +16,3 @@ ___
 IP 51.250.94.252
 
 Сcылка на макет [Figma](https://disk.yandex.ru/d/QowYVc3LjLWyeA)
-
-Frontend: https://damovies-explorer.nomoredomains.rocks
